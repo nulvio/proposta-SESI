@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuidado Personalizado SESI — Proposta de Valor</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --teal:        #0f6e56;
+  --teal-light:  #1d9e75;
+  --teal-pale:   #e1f5ee;
+  --gold:        #ba7517;
+  --gold-pale:   #faeeda;
+  --dark:        #1a1a18;
+  --mid:         #3d3d3a;
+  --muted:       #888780;
+  --border:      #e2e0d8;
+  --bg:          #faf9f6;
+  --white:       #ffffff;
+  --shadow:      0 4px 24px rgba(0,0,0,0.08);
+  --shadow-lg:   0 12px 48px rgba(0,0,0,0.13);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+  line-height: 1.7;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--teal);
+  color: var(--white);
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 40px,
+    rgba(255,255,255,0.02) 40px,
+    rgba(255,255,255,0.02) 80px
+  );
+}
+.hero-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  max-width: 720px;
+  margin: 0 auto 1.2rem;
+}
+.hero h1 em {
+  font-style: italic;
+  color: rgba(255,255,255,0.75);
+}
+.hero p {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.8);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ── SECTION BASE ── */
+section { padding: 4rem 2rem; }
+.container { max-width: 960px; margin: 0 auto; }
+
+.section-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.6rem;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.section-lead {
+  font-size: 1rem;
+  color: var(--mid);
+  max-width: 620px;
+  margin-bottom: 2.5rem;
+}
+
+/* ── PROBLEM SECTION ── */
+.section-problem { background: var(--white); }
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+@media (max-width: 860px) {
+  .problem-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 560px) {
+  .problem-grid { grid-template-columns: 1fr 1fr; }
+}
+.problem-card {
+  background: #fdf5f3;
+  border: 1px solid #f5c4b3;
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.problem-icon {
+  width: 28px; height: 28px;
+  background: #faece7;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 13px;
+}
+.problem-card p {
+  font-size: 0.85rem;
+  color: var(--mid);
+  line-height: 1.5;
+}
+.problem-conclusion {
+  margin-top: 2rem;
+  padding: 1.2rem 1.6rem;
+  background: var(--teal-pale);
+  border-left: 3px solid var(--teal-light);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.92rem;
+  color: var(--teal);
+  font-weight: 400;
+}
+.problem-conclusion strong { font-weight: 700; }
+
+/* ── APPROACH SECTION ── */
+.section-approach { background: var(--bg); }
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+.approach-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.4rem;
+}
+.approach-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--teal-pale);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.approach-card h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.approach-card p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* ── HOW IT WORKS ── */
+.section-how { background: var(--white); }
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 680px;
+  margin-top: 2rem;
+}
+.step-item {
+  display: flex;
+  gap: 1.2rem;
+  padding-bottom: 1.8rem;
+  position: relative;
+}
+.step-item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 18px;
+  top: 38px;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+.step-dot {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.step-content h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.25rem;
+  padding-top: 0.45rem;
+}
+.step-content p {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* ── TEAM ── */
+.section-team { background: var(--bg); }
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.team-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.6rem;
+}
+.team-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--teal);
+  margin-bottom: 0.4rem;
+}
+.team-card p {
+  font-size: 0.83rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.team-benefits {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.team-benefit-pill {
+  background: var(--teal-pale);
+  border: 1px solid #9fe1cb;
+  border-radius: 20px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--teal);
+}
+
+/* ── DIFFERENTIALS ── */
+.section-diff { background: var(--teal); color: var(--white); }
+.section-diff .section-tag { color: rgba(255,255,255,0.5); }
+.section-diff .section-title { color: var(--white); }
+.diff-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+@media (max-width: 860px) {
+  .diff-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 560px) {
+  .diff-grid { grid-template-columns: 1fr 1fr; }
+}
+.diff-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 1.4rem;
+}
+.diff-check {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+.diff-card h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.diff-card p {
+  font-size: 0.81rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.5;
+}
+
+/* ── IMPACT ── */
+.section-impact { background: var(--bg); }
+.impact-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.impact-col {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.4rem;
+}
+.impact-col-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--teal);
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+.impact-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.impact-col li {
+  font-size: 0.83rem;
+  color: var(--mid);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.impact-col li::before {
+  content: '';
+  display: block;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--teal-light);
+  flex-shrink: 0;
+  margin-top: 0.45em;
+}
+
+/* ── WHY IT WORKS ── */
+.section-why { background: var(--white); }
+.why-blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.why-block {
+  background: var(--gold-pale);
+  border: 1px solid #fac775;
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+}
+.why-block h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+.why-block p {
+  font-size: 0.83rem;
+  color: var(--mid);
+  line-height: 1.55;
+}
+.why-conclusion {
+  margin-top: 1.5rem;
+  padding: 1rem 1.4rem;
+  background: var(--teal-pale);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: var(--teal);
+  text-align: center;
+  font-weight: 400;
+}
+.why-conclusion strong { font-weight: 700; }
+
+/* ── CONCLUSION ── */
+.section-conclusion {
+  background: linear-gradient(135deg, var(--teal) 0%, #0a4f3c 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 5rem 2rem;
+}
+.section-conclusion .section-title { color: var(--white); margin-bottom: 1.5rem; }
+.conclusion-pillars {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 2rem 0 3rem;
+}
+.pillar {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 12px;
+  padding: 1rem 1.6rem;
+  min-width: 180px;
+}
+.pillar-icon { font-size: 1.4rem; margin-bottom: 0.4rem; }
+.pillar h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.2rem; }
+.pillar p  { font-size: 0.78rem; color: rgba(255,255,255,0.65); }
+
+/* ── CTA BUTTON ── */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: var(--white);
+  color: var(--teal);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  text-decoration: none;
+}
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+}
+.cta-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+/* ── MODAL ── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--bg);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 1100px;
+  max-height: 92vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+  animation: modal-in 0.25s ease;
+}
+@keyframes modal-in {
+  from { transform: scale(0.96) translateY(12px); opacity: 0; }
+  to   { transform: scale(1) translateY(0);       opacity: 1; }
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+  flex-shrink: 0;
+}
+.modal-header h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--teal);
+}
+.modal-close {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  color: var(--muted);
+  transition: background 0.15s;
+}
+.modal-close:hover { background: var(--border); }
+.modal-body {
+  overflow-y: auto;
+  flex: 1;
+  padding: 0;
+}
+.modal-body iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 75vh;
+  border: none;
+}
+
+@media (max-width: 680px) {
+  .team-grid, .why-blocks, .impact-columns { grid-template-columns: 1fr; }
+  .conclusion-pillars { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="data:image/png;base64,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" alt="SESI + Saúde" style="height:56px; margin-bottom:1.5rem; background:white; border-radius:8px; padding:6px 14px;">
+  <h1>Cuidado Personalizado SESI</h1>
+  <p>Da avaliação individualizada ao acompanhamento contínuo — um modelo que transforma o cuidado com seus trabalhadores.</p>
+</section>
+
+<!-- PROBLEM -->
+<section class="section-problem">
+  <div class="container">
+    <div class="section-tag">O Problema</div>
+    <h2 class="section-title">Por que mudar o modelo atual de check-up corporativo?</h2>
+    <p class="section-lead">A maioria dos programas tradicionais de check-up ainda segue um modelo ultrapassado, com baixo impacto real na saúde dos colaboradores.</p>
+    <div class="problem-grid">
+      <div class="problem-card"><div class="problem-icon">📋</div><p>Exames padronizados e pouco personalizados</p></div>
+      <div class="problem-card"><div class="problem-icon">📉</div><p>Baixo impacto real na saúde dos colaboradores</p></div>
+      <div class="problem-card"><div class="problem-icon">💸</div><p>Alto custo com baixo retorno</p></div>
+      <div class="problem-card"><div class="problem-icon">🔗</div><p>Falta de continuidade do cuidado</p></div>
+      <div class="problem-card"><div class="problem-icon">👥</div><p>Baixa adesão e engajamento</p></div>
+    </div>
+    <div class="problem-conclusion">Na prática, as empresas investem, mas <strong>não conseguem transformar esse investimento em saúde, produtividade e redução de custos.</strong></div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="section-approach">
+  <div class="container">
+    <div class="section-tag">A Solução</div>
+    <h2 class="section-title">Cuidado Personalizado e Contínuo</h2>
+    <p class="section-lead">Uma mudança de paradigma: sair do modelo pontual de check-up e evoluir para um modelo inteligente de gestão da saúde do colaborador.</p>
+    <div class="approach-grid">
+      <div class="approach-card">
+        <div class="approach-num">01</div>
+        <h4>Avaliação Individual Profunda</h4>
+        <p>Clínica, comportamental e genética — cada colaborador é único.</p>
+      </div>
+      <div class="approach-card">
+        <div class="approach-num">02</div>
+        <h4>Evidência Científica</h4>
+        <p>Decisões clínicas baseadas nas melhores evidências disponíveis.</p>
+      </div>
+      <div class="approach-card">
+        <div class="approach-num">03</div>
+        <h4>Plano Exclusivo</h4>
+        <p>Plano de cuidado elaborado especificamente para cada colaborador.</p>
+      </div>
+      <div class="approach-card">
+        <div class="approach-num">04</div>
+        <h4>Acompanhamento Contínuo</h4>
+        <p>Monitoramento coordenado ao longo do tempo, não apenas no dia do exame.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section-how">
+  <div class="container">
+    <div class="section-tag">Como Funciona</div>
+    <h2 class="section-title">Simples para a empresa, altamente eficiente na execução</h2>
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-dot">3.1</div>
+        <div class="step-content">
+          <h4>Avaliação inicial aprofundada</h4>
+          <p>Consulta ampliada com Médico de Família, levantamento clínico, hábitos, riscos e identificação precoce de problemas de saúde.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-dot">3.2</div>
+        <div class="step-content">
+          <h4>Estratificação de risco personalizada</h4>
+          <p>Exames direcionados, incluindo avaliação genética quando indicado. Nada de exames desnecessários.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-dot">3.3</div>
+        <div class="step-content">
+          <h4>Check-up inteligente</h4>
+          <p>Exames concentrados em um único momento, realizados em rede de referência, com experiência organizada e assistida.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-dot">3.4</div>
+        <div class="step-content">
+          <h4>Plano de cuidado individual</h4>
+          <p>Definição de ações preventivas e terapêuticas, com encaminhamentos qualificados quando necessário.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-dot">3.5</div>
+        <div class="step-content">
+          <h4>Acompanhamento contínuo</h4>
+          <p>Monitoramento ativo pela equipe, apoio no agendamento e navegação no sistema, com ajustes contínuos do plano de cuidado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section-team">
+  <div class="container">
+    <div class="section-tag">Equipe</div>
+    <h2 class="section-title">Alta resolutividade, modelo reconhecido mundialmente</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <h4>Médico de Família e Comunidade</h4>
+        <p>Visão integral e coordenação do cuidado — o centro de toda a jornada de saúde do colaborador.</p>
+      </div>
+      <div class="team-card">
+        <h4>Enfermeira Especialista</h4>
+        <p>Acompanhamento, navegação e engajamento — garantindo continuidade e adesão ao plano de cuidado.</p>
+      </div>
+    </div>
+    <div class="team-benefits">
+      <span class="team-benefit-pill">Maior resolutividade</span>
+      <span class="team-benefit-pill">Menor fragmentação</span>
+      <span class="team-benefit-pill">Melhor uso da agenda médica</span>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIALS -->
+<section class="section-diff">
+  <div class="container">
+    <div class="section-tag">Diferenciais</div>
+    <h2 class="section-title">O que nos distingue</h2>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-check">✔</div>
+        <h4>Personalização real</h4>
+        <p>Cada colaborador recebe apenas o que realmente precisa.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-check">✔</div>
+        <h4>Redução de desperdícios</h4>
+        <p>Fim dos exames desnecessários e de baixo valor clínico.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-check">✔</div>
+        <h4>Integração ocupacional</h4>
+        <p>ASO e PCMSO integrados ao cuidado de forma coordenada.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-check">✔</div>
+        <h4>Experiência premium</h4>
+        <p>Concierge de saúde, menos deslocamentos, mais comodidade.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-check">✔</div>
+        <h4>Cuidado contínuo</h4>
+        <p>Não é um evento — é uma jornada de saúde personalizada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section class="section-impact">
+  <div class="container">
+    <div class="section-tag">Impacto</div>
+    <h2 class="section-title">Resultados diretos para a empresa</h2>
+    <div class="impact-columns">
+      <div class="impact-col">
+        <div class="impact-col-title">Resultados Assistenciais</div>
+        <ul>
+          <li>Detecção precoce de doenças</li>
+          <li>Melhor controle de condições crônicas</li>
+          <li>Redução de agravamentos</li>
+        </ul>
+      </div>
+      <div class="impact-col">
+        <div class="impact-col-title">Resultados Operacionais</div>
+        <ul>
+          <li>Redução de absenteísmo</li>
+          <li>Redução de presenteísmo</li>
+          <li>Aumento da produtividade</li>
+        </ul>
+      </div>
+      <div class="impact-col">
+        <div class="impact-col-title">Resultados Financeiros</div>
+        <ul>
+          <li>Uso mais eficiente dos recursos</li>
+          <li>Redução de custos assistenciais</li>
+          <li>Melhor previsibilidade de gastos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY IT WORKS -->
+<section class="section-why">
+  <div class="container">
+    <div class="section-tag">Por que funciona</div>
+    <h2 class="section-title">Atua nos dois principais determinantes de custo em saúde</h2>
+    <div class="why-blocks">
+      <div class="why-block">
+        <h4>Frequência de uso</h4>
+        <p>Evita o uso desnecessário do sistema de saúde por meio de triagem inteligente e prevenção baseada em evidências.</p>
+      </div>
+      <div class="why-block">
+        <h4>Custo por evento</h4>
+        <p>Melhora a qualidade das decisões clínicas, reduzindo procedimentos de alto custo e com baixo valor terapêutico.</p>
+      </div>
+    </div>
+    <div class="why-conclusion">E, principalmente, porque transforma o colaborador em <strong>protagonista do próprio cuidado.</strong></div>
+  </div>
+</section>
+
+<!-- CONCLUSION + CTA -->
+<section class="section-conclusion">
+  <div class="container">
+    <h2 class="section-title">Muito além de um check-up</h2>
+    <p style="color:rgba(255,255,255,0.75); max-width:520px; margin:0 auto 2rem; font-size:0.95rem;">Um modelo completo de gestão da saúde corporativa que cuida das pessoas de forma individual e gera valor mensurável para a empresa.</p>
+    <div class="conclusion-pillars">
+      <div class="pillar">
+        <div class="pillar-icon">🏃</div>
+        <h4>Mais saúde</h4>
+        <p>para o colaborador</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">⚙️</div>
+        <h4>Mais eficiência</h4>
+        <p>para a empresa</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">📈</div>
+        <h4>Mais retorno</h4>
+        <p>para o investimento</p>
+      </div>
+    </div>
+    <button class="cta-btn" onclick="document.getElementById('modal').classList.add('open')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/>
+      </svg>
+      Veja como a Proposta Acontece na Prática
+    </button>
+  </div>
+</section>
+
+<!-- MODAL with iframe -->
+<div class="modal-overlay" id="modal" onclick="if(event.target===this) this.classList.remove('open')">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Cuidado Personalizado SESI — Fluxo do Programa</h3>
+      <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">✕</button>
+    </div>
+    <div class="modal-body" style="padding:0; overflow-y:auto; min-height:75vh;">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --teal-light: #e1f5ee;
+    --teal-mid:   #1d9e75;
+    --teal-dark:  #085041;
+    --purple-light: #eeedfe;
+    --purple-mid:   #7f77dd;
+    --purple-dark:  #3c3489;
+    --amber-light: #faeeda;
+    --amber-mid:   #ba7517;
+    --amber-dark:  #633806;
+    --coral-light: #faece7;
+    --coral-mid:   #d85a30;
+    --coral-dark:  #711b13; /* corrigido de 4a1b0c para acessibilidade */
+    --gray-light: #f1efe8;
+    --gray-mid:   #888780;
+    --gray-dark:  #2c2c2a;
+    --bg: #faf9f6;
+    --surface: #ffffff;
+    --text-primary: #1a1a18;
+    --text-secondary: #5f5e5a;
+    --text-muted: #888780;
+    --border: #e2e0d8;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.07);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.10);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,0.14);
+    --radius: 12px;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 2rem 1rem 4rem;
+  }
+
+  header {
+    max-width: 1000px;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+  }
+
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    color: var(--teal-dark);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+  }
+
+  /* LEGEND */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 1.2rem;
+    justify-content: center;
+    max-width: 1000px;
+    padding: 0.5rem 1.2rem;
+    margin: 0 auto 1.5rem;
+    background: #eceae3;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  .legend-dot {
+    width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0;
+  }
+
+  /* FLOW */
+  .flow {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  /* STEP CARD */
+  .step-card {
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1.5px solid transparent;
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    overflow: hidden;
+    position: relative;
+  }
+  .step-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  .step-card.active {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+  }
+  .step-num {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .step-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    flex: 1;
+    line-height: 1.3;
+  }
+  .step-chevron {
+    width: 16px; height: 16px; flex-shrink: 0;
+    transition: transform 0.25s ease;
+    opacity: 0.5;
+  }
+  .step-card.active .step-chevron { transform: rotate(180deg); opacity: 1; }
+
+  /* Detail panel */
+  .step-detail {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), padding 0.25s ease;
+    border-top: 1px solid transparent;
+  }
+  .step-card.active .step-detail {
+    max-height: 600px;
+    padding: 0.9rem 1rem 1.1rem 1rem;
+  }
+  .step-detail ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  .step-detail li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  .step-detail li::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.45em;
+  }
+  .step-detail .detail-meta {
+    margin-top: 0.65rem;
+    font-size: 0.76rem;
+    font-weight: 500;
+    opacity: 0.75;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  /* CONNECTOR */
+  .connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 2px 0;
+    position: relative;
+  }
+  .connector-line {
+    width: 1.5px;
+    height: 22px;
+    background: var(--border);
+  }
+  .connector-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 1px 8px;
+    margin: 2px 0;
+    letter-spacing: 0.02em;
+  }
+
+  /* DECISION DIAMOND */
+  .decision-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .diamond {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* BRANCHES */
+  .branches {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 0;
+  }
+  .branch {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .branch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .branch-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 3px;
+  }
+  .branch-line-h {
+    height: 1.5px;
+    background: var(--border);
+    align-self: stretch;
+  }
+  .branch-line-v {
+    width: 1.5px;
+    height: 18px;
+    background: var(--border);
+  }
+
+  .outcome-card {
+    width: 100%;
+    border-radius: var(--radius);
+    border: 1.5px solid transparent;
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+    padding: 0.75rem 0.9rem;
+    text-align: center;
+  }
+  .outcome-title {
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .outcome-sub {
+    font-size: 0.74rem;
+    opacity: 0.75;
+    margin-top: 0.2rem;
+  }
+
+  /* COLOR THEMES */
+  .theme-teal .step-header    { background: var(--teal-light); }
+  .theme-teal                 { border-color: #9fe1cb; }
+  .theme-teal .step-num       { background: var(--teal-mid); color: #fff; }
+  .theme-teal .step-title     { color: var(--teal-dark); }
+  .theme-teal .step-detail    { border-color: #c8eed9; }
+  .theme-teal .step-detail li::before { background: var(--teal-mid); }
+  .theme-teal .detail-meta    { color: var(--teal-dark); }
+  .theme-teal.active          { border-color: var(--teal-mid); }
+
+  .theme-purple .step-header  { background: var(--purple-light); }
+  .theme-purple               { border-color: #cecbf6; }
+  .theme-purple .step-num     { background: var(--purple-mid); color: #fff; }
+  .theme-purple .step-title   { color: var(--purple-dark); }
+  .theme-purple .step-detail  { border-color: #dddcf8; }
+  .theme-purple .step-detail li::before { background: var(--purple-mid); }
+  .theme-purple .detail-meta  { color: var(--purple-dark); }
+  .theme-purple.active        { border-color: var(--purple-mid); }
+
+  .theme-amber .step-header   { background: var(--amber-light); }
+  .theme-amber                { border-color: #fac775; }
+  .theme-amber .step-num      { background: var(--amber-mid); color: #fff; }
+  .theme-amber .step-title    { color: var(--amber-dark); }
+  .theme-amber .step-detail   { border-color: #f5d9a0; }
+  .theme-amber .step-detail li::before { background: var(--amber-mid); }
+  .theme-amber .detail-meta   { color: var(--amber-dark); }
+  .theme-amber.active         { border-color: var(--amber-mid); }
+
+  .theme-coral .step-header   { background: var(--coral-light); }
+  .theme-coral                { border-color: #f5c4b3; }
+  .theme-coral .step-num      { background: var(--coral-mid); color: #fff; }
+  .theme-coral .step-title    { color: var(--coral-dark); }
+  .theme-coral .step-detail   { border-color: #f5d4c8; }
+  .theme-coral .step-detail li::before { background: var(--coral-mid); }
+  .theme-coral .detail-meta   { color: var(--coral-dark); }
+  .theme-coral.active         { border-color: var(--coral-mid); }
+
+  .theme-teal.outcome-card    { background: var(--teal-light); border-color: #9fe1cb; }
+  .theme-teal .outcome-title  { color: var(--teal-dark); }
+  .theme-teal .outcome-sub    { color: var(--teal-mid); }
+  .theme-coral.outcome-card   { background: var(--coral-light); border-color: #f5c4b3; }
+  .theme-coral .outcome-title { color: var(--coral-dark); }
+  .theme-coral .outcome-sub   { color: var(--coral-mid); }
+
+  footer {
+    text-align: center;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    max-width: 1000px;
+    font-size: 0.65rem;
+    letter-spacing: 0.02em;
+    color: #b4b2a9;
+  }
+
+  @media (max-width: 480px) {
+    .branches { flex-direction: column; align-items: center; }
+    .branch { width: 100%; max-width: 280px; }
+  }
+
+  /* THREE-COLUMN LAYOUT */
+  .page-layout {
+    display: grid;
+    grid-template-columns: 180px 1fr 180px;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    padding: 1rem;
+  }
+
+  .sidebar-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sidebar-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .sidebar-item {
+    font-size: 0.76rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 2px 4px;
+    margin: 0 -4px;
+    transition: background 0.15s;
+    position: relative;
+  }
+  .sidebar-item:hover { background: rgba(0,0,0,0.04); }
+
+  .sidebar-item svg {
+    flex-shrink: 0;
+    margin-top: 0.28em;
+  }
+
+  .sidebar-item span.label { flex: 1; }
+
+  /* Floating tooltip */
+  #sidebar-tooltip {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    max-width: 240px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--teal-mid);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+    padding: 0.7rem 0.85rem;
+    font-size: 0.74rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    pointer-events: none;
+  }
+  #sidebar-tooltip.visible { display: block; }
+
+  /* Highlighted step cards */
+  .step-card.highlighted {
+    box-shadow: 0 0 0 2px var(--purple-mid), 0 4px 20px rgba(127,119,221,0.35);
+    transform: translateY(-1px);
+  }
+
+  .sidebar-right .sidebar-item {
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 2px 4px;
+    margin: 0 -4px;
+    transition: background 0.15s;
+  }
+  .sidebar-right .sidebar-item:hover { background: rgba(0,0,0,0.04); }
+  .sidebar-right .sidebar-item.active-loc { background: var(--purple-light); border-radius: 6px; }
+
+  @media (max-width: 780px) {
+    .page-layout {
+      grid-template-columns: 1fr;
+    }
+    .sidebar {
+      position: static;
+    }
+  }
+
+</style>
+<div style="padding:1rem;">
+
+
+<header>
+  <h1>Cuidado Personalizado SESI</h1>
+  <p>Clique em cada etapa para ver os detalhes do processo</p>
+</header>
+
+<div class="legend">
+  <div class="legend-item"><span class="legend-dot" style="background:var(--teal-mid)"></span>Médico de Família</div>
+  <div class="legend-item"><span class="legend-dot" style="background:var(--purple-mid)"></span>Enfermagem</div>
+  <div class="legend-item"><span class="legend-dot" style="background:var(--amber-mid)"></span>Exames</div>
+</div>
+
+<div class="page-layout">
+
+  <!-- LEFT SIDEBAR: Diferenciais -->
+  <aside class="sidebar sidebar-left">
+    <div class="sidebar-title">Diferenciais</div>
+    <div class="sidebar-list">
+      <div class="sidebar-item" data-tip="Realização dos exames realmente necessários para o paciente conforme seus hábitos e condições de vida e riscos genéticos individuais."><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#1d9e75"/></svg><span class="label">Cuidado individualizado</span></div>
+      <div class="sidebar-item" data-tip="Serviço próximo, customizado e facilitado por concierge."><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#1d9e75"/></svg><span class="label">Comodidade</span></div>
+      <div class="sidebar-item" data-tip="Conciliação com Saúde Ocupacional e emissão do ASO de forma coordenada com o processo de cuidado."><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#1d9e75"/></svg><span class="label">Ocupacional integrado ao cuidado</span></div>
+      <div class="sidebar-item" data-tip="Para o paciente e para a empresa, exames e tratamentos realizados de forma racional e baseados nas melhores evidências científicas disponíveis."><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#1d9e75"/></svg><span class="label">Custo-efetividade</span></div>
+      <div class="sidebar-item" data-tip="Processo de cuidado com acesso próximo e facilitado ao paciente realizado em clínicas e hospitais de referência na região, diminuindo a necessidade de deslocamentos e minimizando as ausências ao serviço."><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#1d9e75"/></svg><span class="label">Customização regional</span></div>
+      <div class="sidebar-item" data-tip="O processo de cuidado não se resume a uma experiência pontual de check-up, e sim à elaboração de Plano de Cuidado Individualizado e oferta de cuidado contínuo e coordenado com Médico de Família e equipe de apoio e monitoramento, garantindo um vínculo e uma experiência personalizada de cuidado."><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#1d9e75"/></svg><span class="label">Cuidado Longitudinal Personalizado</span></div>
+    </div>
+  </aside>
+
+  <div class="flow">
+
+  <!-- SHORTCUT WRAPPER: steps 1-2-3 with bypass line -->
+  <div id="shortcut-wrap" style="position:relative; width:100%;">
+
+  <!-- STEP 1 -->
+  <div id="step-1" class="step-card theme-teal" onclick="toggle(this)">
+    <div class="step-header">
+      <div class="step-num">1</div>
+      <div class="step-title">Consulta inicial — Médico de Família</div>
+      <svg class="step-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 6 8 10 12 6"/></svg>
+    </div>
+    <div class="step-detail">
+      <ul>
+        <li>Anamnese detalhada, coleta de história clínica e familiar</li>
+        <li>Exame físico completo</li>
+        <li>Exploração de condições e hábitos de vida</li>
+        <li>Questionários padronizados: GAD-7 (ansiedade), PHQ-9 (depressão), CAGE/AUDIT (álcool), Fagerström (tabaco), alimentação e atividade física</li>
+        <li>Explicação ao paciente sobre o processo de Check-Up</li>
+        <li>Agendamento ou coleta dos exames iniciais de rastreamento genético</li>
+        <li>Intervenções imediatas em caso de urgência identificada (ex.: saúde mental)</li>
+        <li>Emissão do Atestado de Saúde Ocupacional (ASO) ao fim da consulta, ou agendar exames PCMSO se necessário</li>
+        <li>Registro integral em prontuário eletrônico compartilhado com o paciente</li>
+        <li>Agendamento do retorno</li>
+      </ul>
+      <div class="detail-meta">📍 Ambulatório da Empresa, Clínica de Referência da Região ou Telemedicina, conforme preferência da empresa.</div>
+      <div class="detail-meta">⏱ Duração: 1 hora</div>
+    </div>
+  </div>
+
+  <div class="connector"><div class="connector-line"></div></div>
+
+  <!-- STEP 2 -->
+  <div id="step-2" class="step-card theme-amber" onclick="toggle(this)" style="width:93%; align-self:flex-start;">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <div class="step-title">Exames iniciais individualizados</div>
+      <svg class="step-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 6 8 10 12 6"/></svg>
+    </div>
+    <div class="step-detail">
+      <ul>
+        <li><strong>Genera Plus ou Similar</strong> — detalhamento de risco genético de doenças crônicas</li>
+        <li><strong>Painel Multigênico de Câncer</strong> — detalhamento de risco genético de desenvolvimento de câncer</li>
+        <li>Exames complementares previstos no PCMSO, se aplicável</li>
+        <li style="padding-left:1.2rem; opacity:0.85">Realizados preferencialmente ao fim da consulta médica inicial</li>
+        <li style="padding-left:1.2rem; opacity:0.85">Processo facilitado e coordenado pela enfermeira do programa</li>
+      </ul>
+      <div class="detail-meta">📍 Mesmo local da consulta ou Laboratório de Referência da Região</div>
+    </div>
+  </div>
+
+  <div class="connector">
+    <div class="connector-line" style="height:11px"></div>
+    <div class="connector-label">≈ 30 dias</div>
+    <div class="connector-line" style="height:11px"></div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div id="step-3" class="step-card theme-teal" onclick="toggle(this)" style="width:93%; align-self:flex-start;">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <div class="step-title">Retorno — Médico de Família</div>
+      <svg class="step-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 6 8 10 12 6"/></svg>
+    </div>
+    <div class="step-detail">
+      <ul>
+        <li>Anamnese direcionada às condições levantadas na primeira consulta</li>
+        <li>Análise dos resultados dos exames genéticos realizados na etapa 2</li>
+        <li>Explicação detalhada dos resultados ao paciente, explorando significados e experiência individual</li>
+        <li>Elaboração do plano de rastreamento personalizado conforme risco genético, hábitos e condições de vida</li>
+        <li>Solicitação dos exames de rastreamento individualizados</li>
+        <li>Emissão do ASO caso não tenha sido feita na primeira consulta</li>
+        <li>Agendamento de retorno para análise dos exames de rastreamento</li>
+        <li>Registro em prontuário eletrônico compartilhado</li>
+      </ul>
+      <div class="detail-meta">📍 Ambulatório da Empresa, Clínica de Referência da Região ou Telemedicina, conforme preferência da empresa.</div>
+      <div class="detail-meta">⏱ Duração: 1 hora</div>
+    </div>
+  </div>
+
+  <!-- SVG shortcut bypass line (rendered by JS after layout) -->
+  <svg id="shortcut-svg" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:visible;">
+    <defs>
+      <marker id="sc-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="var(--border)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+    <path id="shortcut-path-top" d="" fill="none" stroke="var(--border)" stroke-width="1.5" stroke-dasharray="5 3"/>
+    <path id="shortcut-path-bot" d="" fill="none" stroke="var(--border)" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#sc-arrow)"/>
+    <polygon id="shortcut-diamond" points="0,0" fill="white" stroke="var(--border)" stroke-width="1.5"
+      style="cursor:pointer; pointer-events:all;" onclick="showShortcutTip(event)"/>
+    <text id="shortcut-diamond-text" x="0" y="0" font-family="DM Sans, sans-serif" font-size="9"
+      font-weight="700" fill="var(--text-muted)" text-anchor="middle" dominant-baseline="central"
+      style="cursor:pointer; pointer-events:all;" onclick="showShortcutTip(event)">?</text>
+  </svg>
+
+  <div class="connector"><div class="connector-line"></div></div>
+
+  <!-- STEP 4 -->
+  <div id="step-4" class="step-card theme-purple" onclick="toggle(this)">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <div class="step-title">4. Coordenação dos exames de Check-up</div>
+      <svg class="step-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 6 8 10 12 6"/></svg>
+    </div>
+    <div class="step-detail">
+      <ul>
+        <li>Agendamento do dia de check-up em Hospital de Referência da região</li>
+        <li style="padding-left:1.2rem; opacity:0.85">Exemplo em Florianópolis: Hospital Baía Sul</li>
+        <li>Processo facilitado e coordenado pela enfermeira do programa</li>
+        <li style="padding-left:1.2rem; opacity:0.85">Objetivo: concentrar todos os exames em um único dia</li>
+      </ul>
+      <div class="detail-meta">📍 Telemedicina</div>
+    </div>
+  </div>
+
+  </div><!-- end shortcut-wrap -->
+
+  <div class="connector"><div class="connector-line"></div></div>
+
+  <!-- STEP 5 -->
+  <div id="step-5" class="step-card theme-amber" onclick="toggle(this)">
+    <div class="step-header">
+      <div class="step-num">5</div>
+      <div class="step-title">Dia de check-up personalizado</div>
+      <svg class="step-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 6 8 10 12 6"/></svg>
+    </div>
+    <div class="step-detail">
+      <ul>
+        <li>Realização dos exames de check-up personalizados em hospital de referência contratado</li>
+        <li>Todos os exames realizados preferencialmente no mesmo dia</li>
+        <li>Resultados disponibilizados ao fim do exame sempre que possível</li>
+        <li>Acompanhamento e coordenação presencial pela enfermeira do programa</li>
+      </ul>
+      <div class="detail-meta">📍 Hospital ou Clínica de Referência da Região</div>
+      <div class="detail-meta">⏱ Duração: 1 dia</div>
+    </div>
+  </div>
+
+  <div class="connector"><div class="connector-line"></div></div>
+
+  <!-- STEP 6 -->
+  <div id="step-6" class="step-card theme-teal" onclick="toggle(this)">
+    <div class="step-header">
+      <div class="step-num">6</div>
+      <div class="step-title">Plano de Cuidado Personalizado — Médico de Família</div>
+      <svg class="step-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 6 8 10 12 6"/></svg>
+    </div>
+    <div class="step-detail">
+      <ul>
+        <li>Anamnese direcionada ao processo de realização dos exames</li>
+        <li>Análise dos resultados dos exames de rastreamento da etapa 5</li>
+        <li>Explicação detalhada dos resultados, com cuidado para explorar os significados e a experiência do paciente</li>
+        <li>Elaboração do Plano de Cuidado Personalizado conforme resultados e hábitos de vida</li>
+        <li>Encaminhamento para especialistas, se necessário</li>
+        <li>Pactuação do acompanhamento do Plano de Cuidado entre paciente, médico e enfermeira</li>
+        <li>Agendamento de retorno conforme o Plano: pacientes saudáveis em 1 ano; com condições crônicas, periodicidade individualizada</li>
+        <li>Registro em prontuário eletrônico compartilhado</li>
+      </ul>
+      <div class="detail-meta">📍 Ambulatório da Empresa, Clínica de Referência da Região ou Telemedicina, conforme preferência da empresa.</div>
+      <div class="detail-meta">⏱ Duração: 1 hora</div>
+    </div>
+  </div>
+
+  <div class="connector"><div class="connector-line"></div></div>
+
+  <!-- STEP 7 -->
+  <div id="step-7" class="step-card theme-purple" onclick="toggle(this)">
+    <div class="step-header">
+      <div class="step-num">7</div>
+      <div class="step-title">Monitoramento periódico contínuo</div>
+      <svg class="step-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 6 8 10 12 6"/></svg>
+    </div>
+    <div class="step-detail">
+      <ul>
+        <li>Monitoramento periódico do tratamento pela enfermeira do programa</li>
+        <li>Apoio às demais necessidades de saúde do paciente</li>
+        <li>"Conciergeria" no agendamento de consultas e exames</li>
+        <li>Acompanhamento conforme o Plano de Cuidado Individual pactuado na etapa 6</li>
+      </ul>
+      <div class="detail-meta">♻ Cuidado longitudinal e contínuo</div>
+    </div>
+  </div>
+
+  <div class="connector"><div class="connector-line"></div></div>
+
+  <!-- DECISION + BIFURCATION -->
+  <div style="width:100%; display:flex; flex-direction:column; align-items:center;">
+
+    <!-- SVG: diamond + horizontal arms -->
+    <svg width="100%" viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" style="overflow:visible; max-width:500px;">
+      <!-- vertical line into diamond top -->
+      <line x1="200" y1="0" x2="200" y2="8" stroke="var(--border)" stroke-width="1.5"/>
+      <!-- diamond -->
+      <polygon points="200,8 268,65 200,122 132,65" fill="var(--surface)" stroke="var(--border)" stroke-width="1.5"/>
+      <text x="200" y="54" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="var(--text-secondary)">Condição</text>
+      <text x="200" y="68" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="var(--text-secondary)">identificada?</text>
+      <!-- left arm: Não -->
+      <line x1="132" y1="65" x2="60" y2="65" stroke="var(--border)" stroke-width="1.5"/>
+      <line x1="60" y1="65" x2="60" y2="110" stroke="var(--border)" stroke-width="1.5"/>
+      <polygon points="55,107 60,118 65,107" fill="var(--border)"/>
+      <text x="96" y="56" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" font-weight="700" fill="var(--text-muted)">NÃO</text>
+      <!-- right arm: Sim -->
+      <line x1="268" y1="65" x2="340" y2="65" stroke="var(--border)" stroke-width="1.5"/>
+      <line x1="340" y1="65" x2="340" y2="110" stroke="var(--border)" stroke-width="1.5"/>
+      <polygon points="335,107 340,118 345,107" fill="var(--border)"/>
+      <text x="304" y="56" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" font-weight="700" fill="var(--text-muted)">SIM</text>
+    </svg>
+
+    <!-- outcome cards aligned under the arrows -->
+    <div style="width:100%; max-width:500px; display:flex; justify-content:space-between; gap:1rem;">
+      <div style="width:42%; display:flex;">
+        <div class="outcome-card theme-teal" style="width:100%; display:flex; flex-direction:column; justify-content:center; min-height:64px;">
+          <div class="outcome-title">Paciente saudável</div>
+          <div class="outcome-sub">Retorno em 1 ano</div>
+        </div>
+      </div>
+      <div style="width:42%; display:flex; margin-left:auto;">
+        <div class="outcome-card theme-coral" style="width:100%; display:flex; flex-direction:column; justify-content:center; min-height:64px;">
+          <div class="outcome-title">Condição identificada</div>
+          <div class="outcome-sub">Periodicidade individualizada</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  </div><!-- end .flow -->
+
+  <!-- RIGHT SIDEBAR: Locais de Cuidado -->
+  <aside class="sidebar sidebar-right">
+    <div class="sidebar-title">Possíveis Locais de Cuidado</div>
+    <div class="sidebar-list">
+      <div class="sidebar-item" data-highlight="step-1,step-3,step-6"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#7f77dd"/></svg><span class="label">Ambulatório da Empresa</span></div>
+      <div class="sidebar-item" data-highlight="step-1,step-3,step-6"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#7f77dd"/></svg><span class="label">Clínica de Referência da Região</span></div>
+      <div class="sidebar-item" data-highlight="step-1,step-3,step-4,step-6"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#7f77dd"/></svg><span class="label">Telemedicina</span></div>
+      <div class="sidebar-item" data-highlight="step-5"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#7f77dd"/></svg><span class="label">Hospital de Referência da Região</span></div>
+      <div class="sidebar-item" data-highlight="step-2"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#7f77dd"/></svg><span class="label">Laboratório de Referência da Região</span></div>
+    </div>
+  </aside>
+
+</div><!-- end .page-layout -->
+
+<footer>
+  Prontuário eletrônico compartilhado com o paciente em todas as etapas &nbsp;·&nbsp; SESI Plano de Cuidado Personalizado
+</footer>
+
+<div id="sidebar-tooltip"></div>
+
+<script>
+  function drawShortcut() {
+    const wrap = document.getElementById('shortcut-wrap');
+    const s1   = document.getElementById('step-1');
+    const s4   = document.getElementById('step-4');
+    const pathTop = document.getElementById('shortcut-path-top');
+    const pathBot = document.getElementById('shortcut-path-bot');
+    const diamond = document.getElementById('shortcut-diamond');
+    const dText   = document.getElementById('shortcut-diamond-text');
+    if (!wrap || !s1 || !s4 || !pathTop) return;
+
+    const wRect  = wrap.getBoundingClientRect();
+    const s1Rect = s1.getBoundingClientRect();
+    const s4Rect = s4.getBoundingClientRect();
+
+    const x  = s1Rect.left - wRect.left + s1Rect.width * 0.97;
+    const y1 = s1Rect.bottom - wRect.top;
+    const y2 = s4Rect.top   - wRect.top;
+    const ym = (y1 + y2) / 2;
+    const r  = 9;
+
+    pathTop.setAttribute('d', `M ${x} ${y1} L ${x} ${ym - r - 2}`);
+    pathBot.setAttribute('d', `M ${x} ${ym + r + 2} L ${x} ${y2}`);
+
+    diamond.setAttribute('points',
+      `${x},${ym - r} ${x + r},${ym} ${x},${ym + r} ${x - r},${ym}`);
+    dText.setAttribute('x', x);
+    dText.setAttribute('y', ym);
+
+    const hit = document.getElementById('shortcut-hit');
+    if (hit) hit.setAttribute('d', `M ${x} ${y1} L ${x} ${y2}`);
+  }
+
+  function showShortcutTip(e) {
+    e.stopPropagation();
+    const tip = document.getElementById('sidebar-tooltip');
+    tip.textContent = 'Pular os quadros 2 e 3 caso o paciente opte por não realizar testes genéticos e não precise de exames complementares pela PCMSO.';
+    tip.style.borderLeftColor = 'var(--border)';
+    tip.classList.add('visible');
+    tip.style.left = (e.clientX + 12) + 'px';
+    tip.style.top  = (e.clientY - 20) + 'px';
+  }
+
+  window.addEventListener('load', drawShortcut);
+  window.addEventListener('resize', drawShortcut);
+
+  function toggle(card) {
+    const isActive = card.classList.contains('active');
+    document.querySelectorAll('.step-card.active').forEach(c => c.classList.remove('active'));
+    if (!isActive) card.classList.add('active');
+  }
+
+  const tooltip = document.getElementById('sidebar-tooltip');
+  let activeItem = null;
+
+  document.querySelectorAll('.sidebar-item[data-tip]').forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (activeItem === item && tooltip.classList.contains('visible')) {
+        tooltip.classList.remove('visible');
+        activeItem = null;
+        return;
+      }
+      activeItem = item;
+      tooltip.textContent = item.dataset.tip;
+      tooltip.classList.add('visible');
+      const rect = item.getBoundingClientRect();
+      // position to the right of the sidebar item, or below if no room
+      let left = rect.right + 10;
+      let top = rect.top;
+      // ensure it doesn't go off screen right
+      if (left + 250 > window.innerWidth) {
+        left = rect.left - 260;
+      }
+      if (top + 200 > window.innerHeight) {
+        top = window.innerHeight - 210;
+      }
+      tooltip.style.left = left + 'px';
+      tooltip.style.top = top + 'px';
+    });
+  });
+
+  document.querySelectorAll('.sidebar-right .sidebar-item[data-highlight]').forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const isActive = item.classList.contains('active-loc');
+      // clear all highlights
+      document.querySelectorAll('.step-card.highlighted').forEach(c => c.classList.remove('highlighted'));
+      document.querySelectorAll('.sidebar-right .sidebar-item.active-loc').forEach(i => i.classList.remove('active-loc'));
+      if (!isActive) {
+        item.classList.add('active-loc');
+        item.dataset.highlight.split(',').forEach(id => {
+          const el = document.getElementById(id.trim());
+          if (el) el.classList.add('highlighted');
+        });
+      }
+    });
+  });
+
+  document.addEventListener('click', function() {
+    tooltip.classList.remove('visible');
+    activeItem = null;
+    document.querySelectorAll('.step-card.highlighted').forEach(c => c.classList.remove('highlighted'));
+    document.querySelectorAll('.sidebar-right .sidebar-item.active-loc').forEach(i => i.classList.remove('active-loc'));
+  });
+</script>
+
+</div>
+<script>
+(function() {
+"use strict";
+
+  function drawShortcut() {
+    var wrap = document.getElementById('shortcut-wrap');
+    var s1   = document.getElementById('step-1');
+    var s4   = document.getElementById('step-4');
+    var pathTop = document.getElementById('shortcut-path-top');
+    var pathBot = document.getElementById('shortcut-path-bot');
+    var diamond = document.getElementById('shortcut-diamond');
+    var dText   = document.getElementById('shortcut-diamond-text');
+    if (!wrap || !s1 || !s4 || !pathTop) return;
+
+    var wRect  = wrap.getBoundingClientRect();
+    var s1Rect = s1.getBoundingClientRect();
+    var s4Rect = s4.getBoundingClientRect();
+
+    var x  = s1Rect.left - wRect.left + s1Rect.width * 0.97;
+    var y1 = s1Rect.bottom - wRect.top;
+    var y2 = s4Rect.top   - wRect.top;
+    var ym = (y1 + y2) / 2;
+    var r  = 9;
+
+    pathTop.setAttribute('d', `M ${x} ${y1} L ${x} ${ym - r - 2}`);
+    pathBot.setAttribute('d', `M ${x} ${ym + r + 2} L ${x} ${y2}`);
+
+    diamond.setAttribute('points',
+      `${x},${ym - r} ${x + r},${ym} ${x},${ym + r} ${x - r},${ym}`);
+    dText.setAttribute('x', x);
+    dText.setAttribute('y', ym);
+
+    var hit = document.getElementById('shortcut-hit');
+    if (hit) hit.setAttribute('d', `M ${x} ${y1} L ${x} ${y2}`);
+  }
+
+  function showShortcutTip(e) {
+    e.stopPropagation();
+    var tip = document.getElementById('sidebar-tooltip');
+    tip.textContent = 'Pular os quadros 2 e 3 caso o paciente opte por não realizar testes genéticos e não precise de exames complementares pela PCMSO.';
+    tip.style.borderLeftColor = 'var(--border)';
+    tip.classList.add('visible');
+    tip.style.left = (e.clientX + 12) + 'px';
+    tip.style.top  = (e.clientY - 20) + 'px';
+  }
+
+  window.addEventListener('load', drawShortcut);
+  window.addEventListener('resize', drawShortcut);
+
+  function toggle(card) {
+    var isActive = card.classList.contains('active');
+    document.querySelectorAll('.step-card.active').forEach(c => c.classList.remove('active'));
+    if (!isActive) card.classList.add('active');
+  }
+
+  var tooltip = document.getElementById('sidebar-tooltip');
+  var activeItem = null;
+
+  document.querySelectorAll('.sidebar-item[data-tip]').forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (activeItem === item && tooltip.classList.contains('visible')) {
+        tooltip.classList.remove('visible');
+        activeItem = null;
+        return;
+      }
+      activeItem = item;
+      tooltip.textContent = item.dataset.tip;
+      tooltip.classList.add('visible');
+      var rect = item.getBoundingClientRect();
+      // position to the right of the sidebar item, or below if no room
+      var left = rect.right + 10;
+      var top = rect.top;
+      // ensure it doesn't go off screen right
+      if (left + 250 > window.innerWidth) {
+        left = rect.left - 260;
+      }
+      if (top + 200 > window.innerHeight) {
+        top = window.innerHeight - 210;
+      }
+      tooltip.style.left = left + 'px';
+      tooltip.style.top = top + 'px';
+    });
+  });
+
+  document.querySelectorAll('.sidebar-right .sidebar-item[data-highlight]').forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var isActive = item.classList.contains('active-loc');
+      // clear all highlights
+      document.querySelectorAll('.step-card.highlighted').forEach(c => c.classList.remove('highlighted'));
+      document.querySelectorAll('.sidebar-right .sidebar-item.active-loc').forEach(i => i.classList.remove('active-loc'));
+      if (!isActive) {
+        item.classList.add('active-loc');
+        item.dataset.highlight.split(',').forEach(id => {
+          var el = document.getElementById(id.trim());
+          if (el) el.classList.add('highlighted');
+        });
+      }
+    });
+  });
+
+  document.addEventListener('click', function() {
+    tooltip.classList.remove('visible');
+    activeItem = null;
+    document.querySelectorAll('.step-card.highlighted').forEach(c => c.classList.remove('highlighted'));
+    document.querySelectorAll('.sidebar-right .sidebar-item.active-loc').forEach(i => i.classList.remove('active-loc'));
+  });
+
+})();
+</script>
+</div>
+  </div>
+</div>
+
+<script>
+  var modal = document.getElementById('modal');
+  document.querySelector('.cta-btn').addEventListener('click', function() {
+    modal.classList.add('open');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') modal.classList.remove('open');
+  });
+</script>
+</body>
+</html>
