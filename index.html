@@ -121,12 +121,8 @@ section { padding: 4rem 2rem; }
   gap: 1rem;
   margin-top: 2rem;
 }
-@media (max-width: 860px) {
-  .problem-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 560px) {
-  .problem-grid { grid-template-columns: 1fr 1fr; }
-}
+@media (max-width: 860px) { .problem-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px) { .problem-grid { grid-template-columns: 1fr 1fr; } }
 .problem-card {
   background: #fdf5f3;
   border: 1px solid #f5c4b3;
@@ -298,12 +294,8 @@ section { padding: 4rem 2rem; }
   gap: 1rem;
   margin-top: 2rem;
 }
-@media (max-width: 860px) {
-  .diff-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 560px) {
-  .diff-grid { grid-template-columns: 1fr 1fr; }
-}
+@media (max-width: 860px) { .diff-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px) { .diff-grid { grid-template-columns: 1fr 1fr; } }
 .diff-card {
   background: rgba(255,255,255,0.07);
   border: 1px solid rgba(255,255,255,0.12);
@@ -1433,26 +1425,6 @@ section { padding: 4rem 2rem; }
 
   <div class="connector"><div class="connector-line"></div></div>
 
-  <!-- STEP 7 -->
-  <div id="step-7" class="step-card theme-purple" onclick="toggle(this)">
-    <div class="step-header">
-      <div class="step-num">7</div>
-      <div class="step-title">Monitoramento periódico contínuo</div>
-      <svg class="step-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 6 8 10 12 6"/></svg>
-    </div>
-    <div class="step-detail">
-      <ul>
-        <li>Monitoramento periódico do tratamento pela enfermeira do programa</li>
-        <li>Apoio às demais necessidades de saúde do paciente</li>
-        <li>"Conciergeria" no agendamento de consultas e exames</li>
-        <li>Acompanhamento conforme o Plano de Cuidado Individual pactuado na etapa 6</li>
-      </ul>
-      <div class="detail-meta">♻ Cuidado longitudinal e contínuo</div>
-    </div>
-  </div>
-
-  <div class="connector"><div class="connector-line"></div></div>
-
   <!-- DECISION + BIFURCATION -->
   <div style="width:100%; display:flex; flex-direction:column; align-items:center;">
 
@@ -1477,17 +1449,29 @@ section { padding: 4rem 2rem; }
     </svg>
 
     <!-- outcome cards aligned under the arrows -->
-    <div style="width:100%; max-width:500px; display:flex; justify-content:space-between; gap:1rem;">
+    <div style="width:100%; max-width:500px; display:flex; justify-content:space-between; gap:1rem; align-items:flex-start;">
       <div style="width:42%; display:flex;">
         <div class="outcome-card theme-teal" style="width:100%; display:flex; flex-direction:column; justify-content:center; min-height:64px;">
           <div class="outcome-title">Paciente saudável</div>
           <div class="outcome-sub">Retorno em 1 ano</div>
         </div>
       </div>
-      <div style="width:42%; display:flex; margin-left:auto;">
-        <div class="outcome-card theme-coral" style="width:100%; display:flex; flex-direction:column; justify-content:center; min-height:64px;">
-          <div class="outcome-title">Condição identificada</div>
-          <div class="outcome-sub">Periodicidade individualizada</div>
+      <div style="width:54%; display:flex; margin-left:auto;">
+        <div id="step-7" class="step-card theme-purple" onclick="toggle(this)" style="width:100%; cursor:pointer;">
+          <div class="step-header">
+            <div class="step-num">7</div>
+            <div class="step-title">Monitoramento periódico contínuo</div>
+            <svg class="step-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 6 8 10 12 6"/></svg>
+          </div>
+          <div class="step-detail">
+            <ul>
+              <li>Monitoramento periódico do tratamento pela enfermeira do programa</li>
+              <li>Apoio às demais necessidades de saúde do paciente</li>
+              <li>"Conciergeria" no agendamento de consultas e exames</li>
+              <li>Acompanhamento conforme o Plano de Cuidado Individual pactuado na etapa 6</li>
+            </ul>
+            <div class="detail-meta">♻ Cuidado longitudinal e contínuo</div>
+          </div>
         </div>
       </div>
     </div>
