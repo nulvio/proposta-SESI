@@ -762,7 +762,7 @@ section { padding: 4rem 2rem; }
         <p>para o investimento</p>
       </div>
     </div>
-    <button class="cta-btn" onclick="document.getElementById('modal').classList.add('open')">
+    <button class="cta-btn">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/>
       </svg>
@@ -778,10 +778,15 @@ section { padding: 4rem 2rem; }
       <h3>Cuidado Personalizado SESI — Fluxo do Programa</h3>
       <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">✕</button>
     </div>
-    <div class="modal-body" style="padding:0; overflow-y:auto; min-height:75vh;">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-
+    <div class="modal-body" style="padding:0; overflow:hidden; min-height:75vh; display:flex; flex-direction:column;">
+  <iframe id="fc-iframe" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Cuidado Personalizado SESI&lt;/title&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
@@ -813,7 +818,7 @@ section { padding: 4rem 2rem; }
   }
 
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: &#x27;DM Sans&#x27;, sans-serif;
     background: var(--bg);
     color: var(--text-primary);
     min-height: 100vh;
@@ -827,7 +832,7 @@ section { padding: 4rem 2rem; }
   }
 
   header h1 {
-    font-family: 'DM Serif Display', serif;
+    font-family: &#x27;DM Serif Display&#x27;, serif;
     font-size: clamp(1.6rem, 4vw, 2.4rem);
     color: var(--teal-dark);
     line-height: 1.2;
@@ -950,7 +955,7 @@ section { padding: 4rem 2rem; }
     line-height: 1.5;
   }
   .step-detail li::before {
-    content: '';
+    content: &#x27;&#x27;;
     width: 5px; height: 5px;
     border-radius: 50%;
     flex-shrink: 0;
@@ -1148,7 +1153,7 @@ section { padding: 4rem 2rem; }
   }
 
   .sidebar-title {
-    font-family: 'DM Serif Display', serif;
+    font-family: &#x27;DM Serif Display&#x27;, serif;
     font-size: 0.85rem;
     color: var(--text-primary);
     margin-bottom: 0.75rem;
@@ -1228,509 +1233,399 @@ section { padding: 4rem 2rem; }
       position: static;
     }
   }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
 
-</style>
-<div style="padding:1rem;">
+&lt;header&gt;
+  &lt;h1&gt;Cuidado Personalizado SESI&lt;/h1&gt;
+  &lt;p&gt;Clique em cada etapa para ver os detalhes do processo&lt;/p&gt;
+&lt;/header&gt;
 
+&lt;div class=&quot;legend&quot;&gt;
+  &lt;div class=&quot;legend-item&quot;&gt;&lt;span class=&quot;legend-dot&quot; style=&quot;background:var(--teal-mid)&quot;&gt;&lt;/span&gt;Médico de Família&lt;/div&gt;
+  &lt;div class=&quot;legend-item&quot;&gt;&lt;span class=&quot;legend-dot&quot; style=&quot;background:var(--purple-mid)&quot;&gt;&lt;/span&gt;Enfermagem&lt;/div&gt;
+  &lt;div class=&quot;legend-item&quot;&gt;&lt;span class=&quot;legend-dot&quot; style=&quot;background:var(--amber-mid)&quot;&gt;&lt;/span&gt;Exames&lt;/div&gt;
+&lt;/div&gt;
 
-<header>
-  <h1>Cuidado Personalizado SESI</h1>
-  <p>Clique em cada etapa para ver os detalhes do processo</p>
-</header>
+&lt;div class=&quot;page-layout&quot;&gt;
 
-<div class="legend">
-  <div class="legend-item"><span class="legend-dot" style="background:var(--teal-mid)"></span>Médico de Família</div>
-  <div class="legend-item"><span class="legend-dot" style="background:var(--purple-mid)"></span>Enfermagem</div>
-  <div class="legend-item"><span class="legend-dot" style="background:var(--amber-mid)"></span>Exames</div>
-</div>
+  &lt;!-- LEFT SIDEBAR: Diferenciais --&gt;
+  &lt;aside class=&quot;sidebar sidebar-left&quot;&gt;
+    &lt;div class=&quot;sidebar-title&quot;&gt;Diferenciais&lt;/div&gt;
+    &lt;div class=&quot;sidebar-list&quot;&gt;
+      &lt;div class=&quot;sidebar-item&quot; data-tip=&quot;Realização dos exames realmente necessários para o paciente conforme seus hábitos e condições de vida e riscos genéticos individuais.&quot;&gt;&lt;svg width=&quot;6&quot; height=&quot;6&quot; viewBox=&quot;0 0 6 6&quot;&gt;&lt;circle cx=&quot;3&quot; cy=&quot;3&quot; r=&quot;3&quot; fill=&quot;#1d9e75&quot;/&gt;&lt;/svg&gt;&lt;span class=&quot;label&quot;&gt;Cuidado individualizado&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;sidebar-item&quot; data-tip=&quot;Serviço próximo, customizado e facilitado por concierge.&quot;&gt;&lt;svg width=&quot;6&quot; height=&quot;6&quot; viewBox=&quot;0 0 6 6&quot;&gt;&lt;circle cx=&quot;3&quot; cy=&quot;3&quot; r=&quot;3&quot; fill=&quot;#1d9e75&quot;/&gt;&lt;/svg&gt;&lt;span class=&quot;label&quot;&gt;Comodidade&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;sidebar-item&quot; data-tip=&quot;Conciliação com Saúde Ocupacional e emissão do ASO de forma coordenada com o processo de cuidado.&quot;&gt;&lt;svg width=&quot;6&quot; height=&quot;6&quot; viewBox=&quot;0 0 6 6&quot;&gt;&lt;circle cx=&quot;3&quot; cy=&quot;3&quot; r=&quot;3&quot; fill=&quot;#1d9e75&quot;/&gt;&lt;/svg&gt;&lt;span class=&quot;label&quot;&gt;Ocupacional integrado ao cuidado&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;sidebar-item&quot; data-tip=&quot;Para o paciente e para a empresa, exames e tratamentos realizados de forma racional e baseados nas melhores evidências científicas disponíveis.&quot;&gt;&lt;svg width=&quot;6&quot; height=&quot;6&quot; viewBox=&quot;0 0 6 6&quot;&gt;&lt;circle cx=&quot;3&quot; cy=&quot;3&quot; r=&quot;3&quot; fill=&quot;#1d9e75&quot;/&gt;&lt;/svg&gt;&lt;span class=&quot;label&quot;&gt;Custo-efetividade&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;sidebar-item&quot; data-tip=&quot;Processo de cuidado com acesso próximo e facilitado ao paciente realizado em clínicas e hospitais de referência na região, diminuindo a necessidade de deslocamentos e minimizando as ausências ao serviço.&quot;&gt;&lt;svg width=&quot;6&quot; height=&quot;6&quot; viewBox=&quot;0 0 6 6&quot;&gt;&lt;circle cx=&quot;3&quot; cy=&quot;3&quot; r=&quot;3&quot; fill=&quot;#1d9e75&quot;/&gt;&lt;/svg&gt;&lt;span class=&quot;label&quot;&gt;Customização regional&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;sidebar-item&quot; data-tip=&quot;O processo de cuidado não se resume a uma experiência pontual de check-up, e sim à elaboração de Plano de Cuidado Individualizado e oferta de cuidado contínuo e coordenado com Médico de Família e equipe de apoio e monitoramento, garantindo um vínculo e uma experiência personalizada de cuidado.&quot;&gt;&lt;svg width=&quot;6&quot; height=&quot;6&quot; viewBox=&quot;0 0 6 6&quot;&gt;&lt;circle cx=&quot;3&quot; cy=&quot;3&quot; r=&quot;3&quot; fill=&quot;#1d9e75&quot;/&gt;&lt;/svg&gt;&lt;span class=&quot;label&quot;&gt;Cuidado Longitudinal Personalizado&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/aside&gt;
 
-<div class="page-layout">
+  &lt;div class=&quot;flow&quot;&gt;
 
-  <!-- LEFT SIDEBAR: Diferenciais -->
-  <aside class="sidebar sidebar-left">
-    <div class="sidebar-title">Diferenciais</div>
-    <div class="sidebar-list">
-      <div class="sidebar-item" data-tip="Realização dos exames realmente necessários para o paciente conforme seus hábitos e condições de vida e riscos genéticos individuais."><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#1d9e75"/></svg><span class="label">Cuidado individualizado</span></div>
-      <div class="sidebar-item" data-tip="Serviço próximo, customizado e facilitado por concierge."><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#1d9e75"/></svg><span class="label">Comodidade</span></div>
-      <div class="sidebar-item" data-tip="Conciliação com Saúde Ocupacional e emissão do ASO de forma coordenada com o processo de cuidado."><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#1d9e75"/></svg><span class="label">Ocupacional integrado ao cuidado</span></div>
-      <div class="sidebar-item" data-tip="Para o paciente e para a empresa, exames e tratamentos realizados de forma racional e baseados nas melhores evidências científicas disponíveis."><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#1d9e75"/></svg><span class="label">Custo-efetividade</span></div>
-      <div class="sidebar-item" data-tip="Processo de cuidado com acesso próximo e facilitado ao paciente realizado em clínicas e hospitais de referência na região, diminuindo a necessidade de deslocamentos e minimizando as ausências ao serviço."><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#1d9e75"/></svg><span class="label">Customização regional</span></div>
-      <div class="sidebar-item" data-tip="O processo de cuidado não se resume a uma experiência pontual de check-up, e sim à elaboração de Plano de Cuidado Individualizado e oferta de cuidado contínuo e coordenado com Médico de Família e equipe de apoio e monitoramento, garantindo um vínculo e uma experiência personalizada de cuidado."><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#1d9e75"/></svg><span class="label">Cuidado Longitudinal Personalizado</span></div>
-    </div>
-  </aside>
+  &lt;!-- SHORTCUT WRAPPER: steps 1-2-3 with bypass line --&gt;
+  &lt;div id=&quot;shortcut-wrap&quot; style=&quot;position:relative; width:100%;&quot;&gt;
 
-  <div class="flow">
+  &lt;!-- STEP 1 --&gt;
+  &lt;div id=&quot;step-1&quot; class=&quot;step-card theme-teal&quot; onclick=&quot;toggle(this)&quot;&gt;
+    &lt;div class=&quot;step-header&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;1&lt;/div&gt;
+      &lt;div class=&quot;step-title&quot;&gt;Consulta inicial — Médico de Família&lt;/div&gt;
+      &lt;svg class=&quot;step-chevron&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;polyline points=&quot;4 6 8 10 12 6&quot;/&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;step-detail&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Anamnese detalhada, coleta de história clínica e familiar&lt;/li&gt;
+        &lt;li&gt;Exame físico completo&lt;/li&gt;
+        &lt;li&gt;Exploração de condições e hábitos de vida&lt;/li&gt;
+        &lt;li&gt;Questionários padronizados: GAD-7 (ansiedade), PHQ-9 (depressão), CAGE/AUDIT (álcool), Fagerström (tabaco), alimentação e atividade física&lt;/li&gt;
+        &lt;li&gt;Explicação ao paciente sobre o processo de Check-Up&lt;/li&gt;
+        &lt;li&gt;Agendamento ou coleta dos exames iniciais de rastreamento genético&lt;/li&gt;
+        &lt;li&gt;Intervenções imediatas em caso de urgência identificada (ex.: saúde mental)&lt;/li&gt;
+        &lt;li&gt;Emissão do Atestado de Saúde Ocupacional (ASO) ao fim da consulta, ou agendar exames PCMSO se necessário&lt;/li&gt;
+        &lt;li&gt;Registro integral em prontuário eletrônico compartilhado com o paciente&lt;/li&gt;
+        &lt;li&gt;Agendamento do retorno&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;div class=&quot;detail-meta&quot;&gt;📍 Ambulatório da Empresa, Clínica de Referência da Região ou Telemedicina, conforme preferência da empresa.&lt;/div&gt;
+      &lt;div class=&quot;detail-meta&quot;&gt;⏱ Duração: 1 hora&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 
-  <!-- SHORTCUT WRAPPER: steps 1-2-3 with bypass line -->
-  <div id="shortcut-wrap" style="position:relative; width:100%;">
+  &lt;div class=&quot;connector&quot;&gt;&lt;div class=&quot;connector-line&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 
-  <!-- STEP 1 -->
-  <div id="step-1" class="step-card theme-teal" onclick="toggle(this)">
-    <div class="step-header">
-      <div class="step-num">1</div>
-      <div class="step-title">Consulta inicial — Médico de Família</div>
-      <svg class="step-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 6 8 10 12 6"/></svg>
-    </div>
-    <div class="step-detail">
-      <ul>
-        <li>Anamnese detalhada, coleta de história clínica e familiar</li>
-        <li>Exame físico completo</li>
-        <li>Exploração de condições e hábitos de vida</li>
-        <li>Questionários padronizados: GAD-7 (ansiedade), PHQ-9 (depressão), CAGE/AUDIT (álcool), Fagerström (tabaco), alimentação e atividade física</li>
-        <li>Explicação ao paciente sobre o processo de Check-Up</li>
-        <li>Agendamento ou coleta dos exames iniciais de rastreamento genético</li>
-        <li>Intervenções imediatas em caso de urgência identificada (ex.: saúde mental)</li>
-        <li>Emissão do Atestado de Saúde Ocupacional (ASO) ao fim da consulta, ou agendar exames PCMSO se necessário</li>
-        <li>Registro integral em prontuário eletrônico compartilhado com o paciente</li>
-        <li>Agendamento do retorno</li>
-      </ul>
-      <div class="detail-meta">📍 Ambulatório da Empresa, Clínica de Referência da Região ou Telemedicina, conforme preferência da empresa.</div>
-      <div class="detail-meta">⏱ Duração: 1 hora</div>
-    </div>
-  </div>
+  &lt;!-- STEP 2 --&gt;
+  &lt;div id=&quot;step-2&quot; class=&quot;step-card theme-amber&quot; onclick=&quot;toggle(this)&quot; style=&quot;width:93%; align-self:flex-start;&quot;&gt;
+    &lt;div class=&quot;step-header&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;2&lt;/div&gt;
+      &lt;div class=&quot;step-title&quot;&gt;Exames iniciais individualizados&lt;/div&gt;
+      &lt;svg class=&quot;step-chevron&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;polyline points=&quot;4 6 8 10 12 6&quot;/&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;step-detail&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;Genera Plus ou Similar&lt;/strong&gt; — detalhamento de risco genético de doenças crônicas&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;Painel Multigênico de Câncer&lt;/strong&gt; — detalhamento de risco genético de desenvolvimento de câncer&lt;/li&gt;
+        &lt;li&gt;Exames complementares previstos no PCMSO, se aplicável&lt;/li&gt;
+        &lt;li style=&quot;padding-left:1.2rem; opacity:0.85&quot;&gt;Realizados preferencialmente ao fim da consulta médica inicial&lt;/li&gt;
+        &lt;li style=&quot;padding-left:1.2rem; opacity:0.85&quot;&gt;Processo facilitado e coordenado pela enfermeira do programa&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;div class=&quot;detail-meta&quot;&gt;📍 Mesmo local da consulta ou Laboratório de Referência da Região&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 
-  <div class="connector"><div class="connector-line"></div></div>
+  &lt;div class=&quot;connector&quot;&gt;
+    &lt;div class=&quot;connector-line&quot; style=&quot;height:11px&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;connector-label&quot;&gt;≈ 30 dias&lt;/div&gt;
+    &lt;div class=&quot;connector-line&quot; style=&quot;height:11px&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
 
-  <!-- STEP 2 -->
-  <div id="step-2" class="step-card theme-amber" onclick="toggle(this)" style="width:93%; align-self:flex-start;">
-    <div class="step-header">
-      <div class="step-num">2</div>
-      <div class="step-title">Exames iniciais individualizados</div>
-      <svg class="step-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 6 8 10 12 6"/></svg>
-    </div>
-    <div class="step-detail">
-      <ul>
-        <li><strong>Genera Plus ou Similar</strong> — detalhamento de risco genético de doenças crônicas</li>
-        <li><strong>Painel Multigênico de Câncer</strong> — detalhamento de risco genético de desenvolvimento de câncer</li>
-        <li>Exames complementares previstos no PCMSO, se aplicável</li>
-        <li style="padding-left:1.2rem; opacity:0.85">Realizados preferencialmente ao fim da consulta médica inicial</li>
-        <li style="padding-left:1.2rem; opacity:0.85">Processo facilitado e coordenado pela enfermeira do programa</li>
-      </ul>
-      <div class="detail-meta">📍 Mesmo local da consulta ou Laboratório de Referência da Região</div>
-    </div>
-  </div>
+  &lt;!-- STEP 3 --&gt;
+  &lt;div id=&quot;step-3&quot; class=&quot;step-card theme-teal&quot; onclick=&quot;toggle(this)&quot; style=&quot;width:93%; align-self:flex-start;&quot;&gt;
+    &lt;div class=&quot;step-header&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;3&lt;/div&gt;
+      &lt;div class=&quot;step-title&quot;&gt;Retorno — Médico de Família&lt;/div&gt;
+      &lt;svg class=&quot;step-chevron&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;polyline points=&quot;4 6 8 10 12 6&quot;/&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;step-detail&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Anamnese direcionada às condições levantadas na primeira consulta&lt;/li&gt;
+        &lt;li&gt;Análise dos resultados dos exames genéticos realizados na etapa 2&lt;/li&gt;
+        &lt;li&gt;Explicação detalhada dos resultados ao paciente, explorando significados e experiência individual&lt;/li&gt;
+        &lt;li&gt;Elaboração do plano de rastreamento personalizado conforme risco genético, hábitos e condições de vida&lt;/li&gt;
+        &lt;li&gt;Solicitação dos exames de rastreamento individualizados&lt;/li&gt;
+        &lt;li&gt;Emissão do ASO caso não tenha sido feita na primeira consulta&lt;/li&gt;
+        &lt;li&gt;Agendamento de retorno para análise dos exames de rastreamento&lt;/li&gt;
+        &lt;li&gt;Registro em prontuário eletrônico compartilhado&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;div class=&quot;detail-meta&quot;&gt;📍 Ambulatório da Empresa, Clínica de Referência da Região ou Telemedicina, conforme preferência da empresa.&lt;/div&gt;
+      &lt;div class=&quot;detail-meta&quot;&gt;⏱ Duração: 1 hora&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 
-  <div class="connector">
-    <div class="connector-line" style="height:11px"></div>
-    <div class="connector-label">≈ 30 dias</div>
-    <div class="connector-line" style="height:11px"></div>
-  </div>
+  &lt;!-- SVG shortcut bypass line (rendered by JS after layout) --&gt;
+  &lt;svg id=&quot;shortcut-svg&quot; style=&quot;position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:visible;&quot;&gt;
+    &lt;defs&gt;
+      &lt;marker id=&quot;sc-arrow&quot; viewBox=&quot;0 0 10 10&quot; refX=&quot;8&quot; refY=&quot;5&quot; markerWidth=&quot;5&quot; markerHeight=&quot;5&quot; orient=&quot;auto-start-reverse&quot;&gt;
+        &lt;path d=&quot;M2 1L8 5L2 9&quot; fill=&quot;none&quot; stroke=&quot;var(--border)&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;/&gt;
+      &lt;/marker&gt;
+    &lt;/defs&gt;
+    &lt;path id=&quot;shortcut-path-top&quot; d=&quot;&quot; fill=&quot;none&quot; stroke=&quot;var(--border)&quot; stroke-width=&quot;1.5&quot; stroke-dasharray=&quot;5 3&quot;/&gt;
+    &lt;path id=&quot;shortcut-path-bot&quot; d=&quot;&quot; fill=&quot;none&quot; stroke=&quot;var(--border)&quot; stroke-width=&quot;1.5&quot; stroke-dasharray=&quot;5 3&quot; marker-end=&quot;url(#sc-arrow)&quot;/&gt;
+    &lt;polygon id=&quot;shortcut-diamond&quot; points=&quot;0,0&quot; fill=&quot;white&quot; stroke=&quot;var(--border)&quot; stroke-width=&quot;1.5&quot;
+      style=&quot;cursor:pointer; pointer-events:all;&quot; onclick=&quot;showShortcutTip(event)&quot;/&gt;
+    &lt;text id=&quot;shortcut-diamond-text&quot; x=&quot;0&quot; y=&quot;0&quot; font-family=&quot;DM Sans, sans-serif&quot; font-size=&quot;9&quot;
+      font-weight=&quot;700&quot; fill=&quot;var(--text-muted)&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;central&quot;
+      style=&quot;cursor:pointer; pointer-events:all;&quot; onclick=&quot;showShortcutTip(event)&quot;&gt;?&lt;/text&gt;
+  &lt;/svg&gt;
 
-  <!-- STEP 3 -->
-  <div id="step-3" class="step-card theme-teal" onclick="toggle(this)" style="width:93%; align-self:flex-start;">
-    <div class="step-header">
-      <div class="step-num">3</div>
-      <div class="step-title">Retorno — Médico de Família</div>
-      <svg class="step-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 6 8 10 12 6"/></svg>
-    </div>
-    <div class="step-detail">
-      <ul>
-        <li>Anamnese direcionada às condições levantadas na primeira consulta</li>
-        <li>Análise dos resultados dos exames genéticos realizados na etapa 2</li>
-        <li>Explicação detalhada dos resultados ao paciente, explorando significados e experiência individual</li>
-        <li>Elaboração do plano de rastreamento personalizado conforme risco genético, hábitos e condições de vida</li>
-        <li>Solicitação dos exames de rastreamento individualizados</li>
-        <li>Emissão do ASO caso não tenha sido feita na primeira consulta</li>
-        <li>Agendamento de retorno para análise dos exames de rastreamento</li>
-        <li>Registro em prontuário eletrônico compartilhado</li>
-      </ul>
-      <div class="detail-meta">📍 Ambulatório da Empresa, Clínica de Referência da Região ou Telemedicina, conforme preferência da empresa.</div>
-      <div class="detail-meta">⏱ Duração: 1 hora</div>
-    </div>
-  </div>
+  &lt;div class=&quot;connector&quot;&gt;&lt;div class=&quot;connector-line&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 
-  <!-- SVG shortcut bypass line (rendered by JS after layout) -->
-  <svg id="shortcut-svg" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:visible;">
-    <defs>
-      <marker id="sc-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-        <path d="M2 1L8 5L2 9" fill="none" stroke="var(--border)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </marker>
-    </defs>
-    <path id="shortcut-path-top" d="" fill="none" stroke="var(--border)" stroke-width="1.5" stroke-dasharray="5 3"/>
-    <path id="shortcut-path-bot" d="" fill="none" stroke="var(--border)" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#sc-arrow)"/>
-    <polygon id="shortcut-diamond" points="0,0" fill="white" stroke="var(--border)" stroke-width="1.5"
-      style="cursor:pointer; pointer-events:all;" onclick="showShortcutTip(event)"/>
-    <text id="shortcut-diamond-text" x="0" y="0" font-family="DM Sans, sans-serif" font-size="9"
-      font-weight="700" fill="var(--text-muted)" text-anchor="middle" dominant-baseline="central"
-      style="cursor:pointer; pointer-events:all;" onclick="showShortcutTip(event)">?</text>
-  </svg>
+  &lt;!-- STEP 4 --&gt;
+  &lt;div id=&quot;step-4&quot; class=&quot;step-card theme-purple&quot; onclick=&quot;toggle(this)&quot;&gt;
+    &lt;div class=&quot;step-header&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;4&lt;/div&gt;
+      &lt;div class=&quot;step-title&quot;&gt;4. Coordenação dos exames de Check-up&lt;/div&gt;
+      &lt;svg class=&quot;step-chevron&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;polyline points=&quot;4 6 8 10 12 6&quot;/&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;step-detail&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Agendamento do dia de check-up em Hospital de Referência da região&lt;/li&gt;
+        &lt;li style=&quot;padding-left:1.2rem; opacity:0.85&quot;&gt;Exemplo em Florianópolis: Hospital Baía Sul&lt;/li&gt;
+        &lt;li&gt;Processo facilitado e coordenado pela enfermeira do programa&lt;/li&gt;
+        &lt;li style=&quot;padding-left:1.2rem; opacity:0.85&quot;&gt;Objetivo: concentrar todos os exames em um único dia&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;div class=&quot;detail-meta&quot;&gt;📍 Telemedicina&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 
-  <div class="connector"><div class="connector-line"></div></div>
+  &lt;/div&gt;&lt;!-- end shortcut-wrap --&gt;
 
-  <!-- STEP 4 -->
-  <div id="step-4" class="step-card theme-purple" onclick="toggle(this)">
-    <div class="step-header">
-      <div class="step-num">4</div>
-      <div class="step-title">4. Coordenação dos exames de Check-up</div>
-      <svg class="step-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 6 8 10 12 6"/></svg>
-    </div>
-    <div class="step-detail">
-      <ul>
-        <li>Agendamento do dia de check-up em Hospital de Referência da região</li>
-        <li style="padding-left:1.2rem; opacity:0.85">Exemplo em Florianópolis: Hospital Baía Sul</li>
-        <li>Processo facilitado e coordenado pela enfermeira do programa</li>
-        <li style="padding-left:1.2rem; opacity:0.85">Objetivo: concentrar todos os exames em um único dia</li>
-      </ul>
-      <div class="detail-meta">📍 Telemedicina</div>
-    </div>
-  </div>
+  &lt;div class=&quot;connector&quot;&gt;&lt;div class=&quot;connector-line&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 
-  </div><!-- end shortcut-wrap -->
+  &lt;!-- STEP 5 --&gt;
+  &lt;div id=&quot;step-5&quot; class=&quot;step-card theme-amber&quot; onclick=&quot;toggle(this)&quot;&gt;
+    &lt;div class=&quot;step-header&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;5&lt;/div&gt;
+      &lt;div class=&quot;step-title&quot;&gt;Dia de check-up personalizado&lt;/div&gt;
+      &lt;svg class=&quot;step-chevron&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;polyline points=&quot;4 6 8 10 12 6&quot;/&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;step-detail&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Realização dos exames de check-up personalizados em hospital de referência contratado&lt;/li&gt;
+        &lt;li&gt;Todos os exames realizados preferencialmente no mesmo dia&lt;/li&gt;
+        &lt;li&gt;Resultados disponibilizados ao fim do exame sempre que possível&lt;/li&gt;
+        &lt;li&gt;Acompanhamento e coordenação presencial pela enfermeira do programa&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;div class=&quot;detail-meta&quot;&gt;📍 Hospital ou Clínica de Referência da Região&lt;/div&gt;
+      &lt;div class=&quot;detail-meta&quot;&gt;⏱ Duração: 1 dia&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 
-  <div class="connector"><div class="connector-line"></div></div>
+  &lt;div class=&quot;connector&quot;&gt;&lt;div class=&quot;connector-line&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 
-  <!-- STEP 5 -->
-  <div id="step-5" class="step-card theme-amber" onclick="toggle(this)">
-    <div class="step-header">
-      <div class="step-num">5</div>
-      <div class="step-title">Dia de check-up personalizado</div>
-      <svg class="step-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 6 8 10 12 6"/></svg>
-    </div>
-    <div class="step-detail">
-      <ul>
-        <li>Realização dos exames de check-up personalizados em hospital de referência contratado</li>
-        <li>Todos os exames realizados preferencialmente no mesmo dia</li>
-        <li>Resultados disponibilizados ao fim do exame sempre que possível</li>
-        <li>Acompanhamento e coordenação presencial pela enfermeira do programa</li>
-      </ul>
-      <div class="detail-meta">📍 Hospital ou Clínica de Referência da Região</div>
-      <div class="detail-meta">⏱ Duração: 1 dia</div>
-    </div>
-  </div>
+  &lt;!-- STEP 6 --&gt;
+  &lt;div id=&quot;step-6&quot; class=&quot;step-card theme-teal&quot; onclick=&quot;toggle(this)&quot;&gt;
+    &lt;div class=&quot;step-header&quot;&gt;
+      &lt;div class=&quot;step-num&quot;&gt;6&lt;/div&gt;
+      &lt;div class=&quot;step-title&quot;&gt;Plano de Cuidado Personalizado — Médico de Família&lt;/div&gt;
+      &lt;svg class=&quot;step-chevron&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;polyline points=&quot;4 6 8 10 12 6&quot;/&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;step-detail&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Anamnese direcionada ao processo de realização dos exames&lt;/li&gt;
+        &lt;li&gt;Análise dos resultados dos exames de rastreamento da etapa 5&lt;/li&gt;
+        &lt;li&gt;Explicação detalhada dos resultados, com cuidado para explorar os significados e a experiência do paciente&lt;/li&gt;
+        &lt;li&gt;Elaboração do Plano de Cuidado Personalizado conforme resultados e hábitos de vida&lt;/li&gt;
+        &lt;li&gt;Encaminhamento para especialistas, se necessário&lt;/li&gt;
+        &lt;li&gt;Pactuação do acompanhamento do Plano de Cuidado entre paciente, médico e enfermeira&lt;/li&gt;
+        &lt;li&gt;Agendamento de retorno conforme o Plano: pacientes saudáveis em 1 ano; com condições crônicas, periodicidade individualizada&lt;/li&gt;
+        &lt;li&gt;Registro em prontuário eletrônico compartilhado&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;div class=&quot;detail-meta&quot;&gt;📍 Ambulatório da Empresa, Clínica de Referência da Região ou Telemedicina, conforme preferência da empresa.&lt;/div&gt;
+      &lt;div class=&quot;detail-meta&quot;&gt;⏱ Duração: 1 hora&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 
-  <div class="connector"><div class="connector-line"></div></div>
+  &lt;div class=&quot;connector&quot;&gt;&lt;div class=&quot;connector-line&quot;&gt;&lt;/div&gt;&lt;/div&gt;
 
-  <!-- STEP 6 -->
-  <div id="step-6" class="step-card theme-teal" onclick="toggle(this)">
-    <div class="step-header">
-      <div class="step-num">6</div>
-      <div class="step-title">Plano de Cuidado Personalizado — Médico de Família</div>
-      <svg class="step-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 6 8 10 12 6"/></svg>
-    </div>
-    <div class="step-detail">
-      <ul>
-        <li>Anamnese direcionada ao processo de realização dos exames</li>
-        <li>Análise dos resultados dos exames de rastreamento da etapa 5</li>
-        <li>Explicação detalhada dos resultados, com cuidado para explorar os significados e a experiência do paciente</li>
-        <li>Elaboração do Plano de Cuidado Personalizado conforme resultados e hábitos de vida</li>
-        <li>Encaminhamento para especialistas, se necessário</li>
-        <li>Pactuação do acompanhamento do Plano de Cuidado entre paciente, médico e enfermeira</li>
-        <li>Agendamento de retorno conforme o Plano: pacientes saudáveis em 1 ano; com condições crônicas, periodicidade individualizada</li>
-        <li>Registro em prontuário eletrônico compartilhado</li>
-      </ul>
-      <div class="detail-meta">📍 Ambulatório da Empresa, Clínica de Referência da Região ou Telemedicina, conforme preferência da empresa.</div>
-      <div class="detail-meta">⏱ Duração: 1 hora</div>
-    </div>
-  </div>
+  &lt;!-- DECISION + BIFURCATION --&gt;
+  &lt;div style=&quot;width:100%; display:flex; flex-direction:column; align-items:center;&quot;&gt;
 
-  <div class="connector"><div class="connector-line"></div></div>
+    &lt;!-- SVG: diamond + horizontal arms --&gt;
+    &lt;svg width=&quot;100%&quot; viewBox=&quot;0 0 400 130&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; style=&quot;overflow:visible; max-width:500px;&quot;&gt;
+      &lt;!-- vertical line into diamond top --&gt;
+      &lt;line x1=&quot;200&quot; y1=&quot;0&quot; x2=&quot;200&quot; y2=&quot;8&quot; stroke=&quot;var(--border)&quot; stroke-width=&quot;1.5&quot;/&gt;
+      &lt;!-- diamond --&gt;
+      &lt;polygon points=&quot;200,8 268,65 200,122 132,65&quot; fill=&quot;var(--surface)&quot; stroke=&quot;var(--border)&quot; stroke-width=&quot;1.5&quot;/&gt;
+      &lt;text x=&quot;200&quot; y=&quot;54&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;central&quot; font-family=&quot;DM Sans, sans-serif&quot; font-size=&quot;11&quot; font-weight=&quot;600&quot; fill=&quot;var(--text-secondary)&quot;&gt;Condição&lt;/text&gt;
+      &lt;text x=&quot;200&quot; y=&quot;68&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;central&quot; font-family=&quot;DM Sans, sans-serif&quot; font-size=&quot;11&quot; font-weight=&quot;600&quot; fill=&quot;var(--text-secondary)&quot;&gt;identificada?&lt;/text&gt;
+      &lt;!-- left arm: Não --&gt;
+      &lt;line x1=&quot;132&quot; y1=&quot;65&quot; x2=&quot;60&quot; y2=&quot;65&quot; stroke=&quot;var(--border)&quot; stroke-width=&quot;1.5&quot;/&gt;
+      &lt;line x1=&quot;60&quot; y1=&quot;65&quot; x2=&quot;60&quot; y2=&quot;110&quot; stroke=&quot;var(--border)&quot; stroke-width=&quot;1.5&quot;/&gt;
+      &lt;polygon points=&quot;55,107 60,118 65,107&quot; fill=&quot;var(--border)&quot;/&gt;
+      &lt;text x=&quot;96&quot; y=&quot;56&quot; text-anchor=&quot;middle&quot; font-family=&quot;DM Sans, sans-serif&quot; font-size=&quot;10&quot; font-weight=&quot;700&quot; fill=&quot;var(--text-muted)&quot;&gt;NÃO&lt;/text&gt;
+      &lt;!-- right arm: Sim --&gt;
+      &lt;line x1=&quot;268&quot; y1=&quot;65&quot; x2=&quot;340&quot; y2=&quot;65&quot; stroke=&quot;var(--border)&quot; stroke-width=&quot;1.5&quot;/&gt;
+      &lt;line x1=&quot;340&quot; y1=&quot;65&quot; x2=&quot;340&quot; y2=&quot;110&quot; stroke=&quot;var(--border)&quot; stroke-width=&quot;1.5&quot;/&gt;
+      &lt;polygon points=&quot;335,107 340,118 345,107&quot; fill=&quot;var(--border)&quot;/&gt;
+      &lt;text x=&quot;304&quot; y=&quot;56&quot; text-anchor=&quot;middle&quot; font-family=&quot;DM Sans, sans-serif&quot; font-size=&quot;10&quot; font-weight=&quot;700&quot; fill=&quot;var(--text-muted)&quot;&gt;SIM&lt;/text&gt;
+    &lt;/svg&gt;
 
-  <!-- DECISION + BIFURCATION -->
-  <div style="width:100%; display:flex; flex-direction:column; align-items:center;">
+    &lt;!-- outcome cards aligned under the arrows --&gt;
+    &lt;div style=&quot;width:100%; max-width:500px; display:flex; justify-content:space-between; gap:1rem; align-items:flex-start;&quot;&gt;
+      &lt;div style=&quot;width:42%; display:flex;&quot;&gt;
+        &lt;div class=&quot;outcome-card theme-teal&quot; style=&quot;width:100%; display:flex; flex-direction:column; justify-content:center; min-height:64px;&quot;&gt;
+          &lt;div class=&quot;outcome-title&quot;&gt;Paciente saudável&lt;/div&gt;
+          &lt;div class=&quot;outcome-sub&quot;&gt;Retorno em 1 ano&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div style=&quot;width:54%; display:flex; margin-left:auto;&quot;&gt;
+        &lt;div id=&quot;step-7&quot; class=&quot;step-card theme-purple&quot; onclick=&quot;toggle(this)&quot; style=&quot;width:100%; cursor:pointer;&quot;&gt;
+          &lt;div class=&quot;step-header&quot;&gt;
+            &lt;div class=&quot;step-num&quot;&gt;7&lt;/div&gt;
+            &lt;div class=&quot;step-title&quot;&gt;Monitoramento periódico contínuo&lt;/div&gt;
+            &lt;svg class=&quot;step-chevron&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;polyline points=&quot;4 6 8 10 12 6&quot;/&gt;&lt;/svg&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;step-detail&quot;&gt;
+            &lt;ul&gt;
+              &lt;li&gt;Monitoramento periódico do tratamento pela enfermeira do programa&lt;/li&gt;
+              &lt;li&gt;Apoio às demais necessidades de saúde do paciente&lt;/li&gt;
+              &lt;li&gt;&quot;Conciergeria&quot; no agendamento de consultas e exames&lt;/li&gt;
+              &lt;li&gt;Acompanhamento conforme o Plano de Cuidado Individual pactuado na etapa 6&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div class=&quot;detail-meta&quot;&gt;♻ Cuidado longitudinal e contínuo&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
 
-    <!-- SVG: diamond + horizontal arms -->
-    <svg width="100%" viewBox="0 0 400 130" xmlns="http://www.w3.org/2000/svg" style="overflow:visible; max-width:500px;">
-      <!-- vertical line into diamond top -->
-      <line x1="200" y1="0" x2="200" y2="8" stroke="var(--border)" stroke-width="1.5"/>
-      <!-- diamond -->
-      <polygon points="200,8 268,65 200,122 132,65" fill="var(--surface)" stroke="var(--border)" stroke-width="1.5"/>
-      <text x="200" y="54" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="var(--text-secondary)">Condição</text>
-      <text x="200" y="68" text-anchor="middle" dominant-baseline="central" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="var(--text-secondary)">identificada?</text>
-      <!-- left arm: Não -->
-      <line x1="132" y1="65" x2="60" y2="65" stroke="var(--border)" stroke-width="1.5"/>
-      <line x1="60" y1="65" x2="60" y2="110" stroke="var(--border)" stroke-width="1.5"/>
-      <polygon points="55,107 60,118 65,107" fill="var(--border)"/>
-      <text x="96" y="56" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" font-weight="700" fill="var(--text-muted)">NÃO</text>
-      <!-- right arm: Sim -->
-      <line x1="268" y1="65" x2="340" y2="65" stroke="var(--border)" stroke-width="1.5"/>
-      <line x1="340" y1="65" x2="340" y2="110" stroke="var(--border)" stroke-width="1.5"/>
-      <polygon points="335,107 340,118 345,107" fill="var(--border)"/>
-      <text x="304" y="56" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" font-weight="700" fill="var(--text-muted)">SIM</text>
-    </svg>
+  &lt;/div&gt;
 
-    <!-- outcome cards aligned under the arrows -->
-    <div style="width:100%; max-width:500px; display:flex; justify-content:space-between; gap:1rem; align-items:flex-start;">
-      <div style="width:42%; display:flex;">
-        <div class="outcome-card theme-teal" style="width:100%; display:flex; flex-direction:column; justify-content:center; min-height:64px;">
-          <div class="outcome-title">Paciente saudável</div>
-          <div class="outcome-sub">Retorno em 1 ano</div>
-        </div>
-      </div>
-      <div style="width:54%; display:flex; margin-left:auto;">
-        <div id="step-7" class="step-card theme-purple" onclick="toggle(this)" style="width:100%; cursor:pointer;">
-          <div class="step-header">
-            <div class="step-num">7</div>
-            <div class="step-title">Monitoramento periódico contínuo</div>
-            <svg class="step-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 6 8 10 12 6"/></svg>
-          </div>
-          <div class="step-detail">
-            <ul>
-              <li>Monitoramento periódico do tratamento pela enfermeira do programa</li>
-              <li>Apoio às demais necessidades de saúde do paciente</li>
-              <li>"Conciergeria" no agendamento de consultas e exames</li>
-              <li>Acompanhamento conforme o Plano de Cuidado Individual pactuado na etapa 6</li>
-            </ul>
-            <div class="detail-meta">♻ Cuidado longitudinal e contínuo</div>
-          </div>
-        </div>
-      </div>
-    </div>
+  &lt;/div&gt;&lt;!-- end .flow --&gt;
 
-  </div>
+  &lt;!-- RIGHT SIDEBAR: Locais de Cuidado --&gt;
+  &lt;aside class=&quot;sidebar sidebar-right&quot;&gt;
+    &lt;div class=&quot;sidebar-title&quot;&gt;Possíveis Locais de Cuidado&lt;/div&gt;
+    &lt;div class=&quot;sidebar-list&quot;&gt;
+      &lt;div class=&quot;sidebar-item&quot; data-highlight=&quot;step-1,step-3,step-6&quot;&gt;&lt;svg width=&quot;6&quot; height=&quot;6&quot; viewBox=&quot;0 0 6 6&quot;&gt;&lt;circle cx=&quot;3&quot; cy=&quot;3&quot; r=&quot;3&quot; fill=&quot;#7f77dd&quot;/&gt;&lt;/svg&gt;&lt;span class=&quot;label&quot;&gt;Ambulatório da Empresa&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;sidebar-item&quot; data-highlight=&quot;step-1,step-3,step-6&quot;&gt;&lt;svg width=&quot;6&quot; height=&quot;6&quot; viewBox=&quot;0 0 6 6&quot;&gt;&lt;circle cx=&quot;3&quot; cy=&quot;3&quot; r=&quot;3&quot; fill=&quot;#7f77dd&quot;/&gt;&lt;/svg&gt;&lt;span class=&quot;label&quot;&gt;Clínica de Referência da Região&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;sidebar-item&quot; data-highlight=&quot;step-1,step-3,step-4,step-6&quot;&gt;&lt;svg width=&quot;6&quot; height=&quot;6&quot; viewBox=&quot;0 0 6 6&quot;&gt;&lt;circle cx=&quot;3&quot; cy=&quot;3&quot; r=&quot;3&quot; fill=&quot;#7f77dd&quot;/&gt;&lt;/svg&gt;&lt;span class=&quot;label&quot;&gt;Telemedicina&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;sidebar-item&quot; data-highlight=&quot;step-5&quot;&gt;&lt;svg width=&quot;6&quot; height=&quot;6&quot; viewBox=&quot;0 0 6 6&quot;&gt;&lt;circle cx=&quot;3&quot; cy=&quot;3&quot; r=&quot;3&quot; fill=&quot;#7f77dd&quot;/&gt;&lt;/svg&gt;&lt;span class=&quot;label&quot;&gt;Hospital de Referência da Região&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;sidebar-item&quot; data-highlight=&quot;step-2&quot;&gt;&lt;svg width=&quot;6&quot; height=&quot;6&quot; viewBox=&quot;0 0 6 6&quot;&gt;&lt;circle cx=&quot;3&quot; cy=&quot;3&quot; r=&quot;3&quot; fill=&quot;#7f77dd&quot;/&gt;&lt;/svg&gt;&lt;span class=&quot;label&quot;&gt;Laboratório de Referência da Região&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/aside&gt;
 
-  </div><!-- end .flow -->
+&lt;/div&gt;&lt;!-- end .page-layout --&gt;
 
-  <!-- RIGHT SIDEBAR: Locais de Cuidado -->
-  <aside class="sidebar sidebar-right">
-    <div class="sidebar-title">Possíveis Locais de Cuidado</div>
-    <div class="sidebar-list">
-      <div class="sidebar-item" data-highlight="step-1,step-3,step-6"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#7f77dd"/></svg><span class="label">Ambulatório da Empresa</span></div>
-      <div class="sidebar-item" data-highlight="step-1,step-3,step-6"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#7f77dd"/></svg><span class="label">Clínica de Referência da Região</span></div>
-      <div class="sidebar-item" data-highlight="step-1,step-3,step-4,step-6"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#7f77dd"/></svg><span class="label">Telemedicina</span></div>
-      <div class="sidebar-item" data-highlight="step-5"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#7f77dd"/></svg><span class="label">Hospital de Referência da Região</span></div>
-      <div class="sidebar-item" data-highlight="step-2"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#7f77dd"/></svg><span class="label">Laboratório de Referência da Região</span></div>
-    </div>
-  </aside>
+&lt;footer&gt;
+  Prontuário eletrônico compartilhado com o paciente em todas as etapas &amp;nbsp;·&amp;nbsp; SESI Plano de Cuidado Personalizado
+&lt;/footer&gt;
 
-</div><!-- end .page-layout -->
+&lt;div id=&quot;sidebar-tooltip&quot;&gt;&lt;/div&gt;
 
-<footer>
-  Prontuário eletrônico compartilhado com o paciente em todas as etapas &nbsp;·&nbsp; SESI Plano de Cuidado Personalizado
-</footer>
-
-<div id="sidebar-tooltip"></div>
-
-<script>
+&lt;script&gt;
   function drawShortcut() {
-    const wrap = document.getElementById('shortcut-wrap');
-    const s1   = document.getElementById('step-1');
-    const s4   = document.getElementById('step-4');
-    const pathTop = document.getElementById('shortcut-path-top');
-    const pathBot = document.getElementById('shortcut-path-bot');
-    const diamond = document.getElementById('shortcut-diamond');
-    const dText   = document.getElementById('shortcut-diamond-text');
-    if (!wrap || !s1 || !s4 || !pathTop) return;
-
-    const wRect  = wrap.getBoundingClientRect();
-    const s1Rect = s1.getBoundingClientRect();
-    const s4Rect = s4.getBoundingClientRect();
-
-    const x  = s1Rect.left - wRect.left + s1Rect.width * 0.97;
-    const y1 = s1Rect.bottom - wRect.top;
-    const y2 = s4Rect.top   - wRect.top;
-    const ym = (y1 + y2) / 2;
-    const r  = 9;
-
-    pathTop.setAttribute('d', `M ${x} ${y1} L ${x} ${ym - r - 2}`);
-    pathBot.setAttribute('d', `M ${x} ${ym + r + 2} L ${x} ${y2}`);
-
-    diamond.setAttribute('points',
-      `${x},${ym - r} ${x + r},${ym} ${x},${ym + r} ${x - r},${ym}`);
-    dText.setAttribute('x', x);
-    dText.setAttribute('y', ym);
-
-    const hit = document.getElementById('shortcut-hit');
-    if (hit) hit.setAttribute('d', `M ${x} ${y1} L ${x} ${y2}`);
-  }
-
-  function showShortcutTip(e) {
-    e.stopPropagation();
-    const tip = document.getElementById('sidebar-tooltip');
-    tip.textContent = 'Pular os quadros 2 e 3 caso o paciente opte por não realizar testes genéticos e não precise de exames complementares pela PCMSO.';
-    tip.style.borderLeftColor = 'var(--border)';
-    tip.classList.add('visible');
-    tip.style.left = (e.clientX + 12) + 'px';
-    tip.style.top  = (e.clientY - 20) + 'px';
-  }
-
-  window.addEventListener('load', drawShortcut);
-  window.addEventListener('resize', drawShortcut);
-
-  function toggle(card) {
-    const isActive = card.classList.contains('active');
-    document.querySelectorAll('.step-card.active').forEach(c => c.classList.remove('active'));
-    if (!isActive) card.classList.add('active');
-  }
-
-  const tooltip = document.getElementById('sidebar-tooltip');
-  let activeItem = null;
-
-  document.querySelectorAll('.sidebar-item[data-tip]').forEach(item => {
-    item.addEventListener('click', function(e) {
-      e.stopPropagation();
-      if (activeItem === item && tooltip.classList.contains('visible')) {
-        tooltip.classList.remove('visible');
-        activeItem = null;
-        return;
-      }
-      activeItem = item;
-      tooltip.textContent = item.dataset.tip;
-      tooltip.classList.add('visible');
-      const rect = item.getBoundingClientRect();
-      // position to the right of the sidebar item, or below if no room
-      let left = rect.right + 10;
-      let top = rect.top;
-      // ensure it doesn't go off screen right
-      if (left + 250 > window.innerWidth) {
-        left = rect.left - 260;
-      }
-      if (top + 200 > window.innerHeight) {
-        top = window.innerHeight - 210;
-      }
-      tooltip.style.left = left + 'px';
-      tooltip.style.top = top + 'px';
-    });
-  });
-
-  document.querySelectorAll('.sidebar-right .sidebar-item[data-highlight]').forEach(item => {
-    item.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const isActive = item.classList.contains('active-loc');
-      // clear all highlights
-      document.querySelectorAll('.step-card.highlighted').forEach(c => c.classList.remove('highlighted'));
-      document.querySelectorAll('.sidebar-right .sidebar-item.active-loc').forEach(i => i.classList.remove('active-loc'));
-      if (!isActive) {
-        item.classList.add('active-loc');
-        item.dataset.highlight.split(',').forEach(id => {
-          const el = document.getElementById(id.trim());
-          if (el) el.classList.add('highlighted');
-        });
-      }
-    });
-  });
-
-  document.addEventListener('click', function() {
-    tooltip.classList.remove('visible');
-    activeItem = null;
-    document.querySelectorAll('.step-card.highlighted').forEach(c => c.classList.remove('highlighted'));
-    document.querySelectorAll('.sidebar-right .sidebar-item.active-loc').forEach(i => i.classList.remove('active-loc'));
-  });
-</script>
-
-</div>
-<script>
-(function() {
-"use strict";
-
-  function drawShortcut() {
-    var wrap = document.getElementById('shortcut-wrap');
-    var s1   = document.getElementById('step-1');
-    var s4   = document.getElementById('step-4');
-    var pathTop = document.getElementById('shortcut-path-top');
-    var pathBot = document.getElementById('shortcut-path-bot');
-    var diamond = document.getElementById('shortcut-diamond');
-    var dText   = document.getElementById('shortcut-diamond-text');
-    if (!wrap || !s1 || !s4 || !pathTop) return;
+    var wrap = document.getElementById(&#x27;shortcut-wrap&#x27;);
+    var s1   = document.getElementById(&#x27;step-1&#x27;);
+    var s2   = document.getElementById(&#x27;step-2&#x27;);
+    var s4   = document.getElementById(&#x27;step-4&#x27;);
+    var pathTop = document.getElementById(&#x27;shortcut-path-top&#x27;);
+    var pathBot = document.getElementById(&#x27;shortcut-path-bot&#x27;);
+    var diamond = document.getElementById(&#x27;shortcut-diamond&#x27;);
+    var dText   = document.getElementById(&#x27;shortcut-diamond-text&#x27;);
+    if (!wrap || !s1 || !s2 || !s4 || !pathTop) return;
 
     var wRect  = wrap.getBoundingClientRect();
     var s1Rect = s1.getBoundingClientRect();
+    var s2Rect = s2.getBoundingClientRect();
     var s4Rect = s4.getBoundingClientRect();
 
-    var x  = s1Rect.left - wRect.left + s1Rect.width * 0.97;
+    // Place line midway between step-2 right edge and step-1 right edge
+    var x  = (s2Rect.right + s1Rect.right) / 2 - wRect.left;
     var y1 = s1Rect.bottom - wRect.top;
     var y2 = s4Rect.top   - wRect.top;
     var ym = (y1 + y2) / 2;
     var r  = 9;
 
-    pathTop.setAttribute('d', `M ${x} ${y1} L ${x} ${ym - r - 2}`);
-    pathBot.setAttribute('d', `M ${x} ${ym + r + 2} L ${x} ${y2}`);
-
-    diamond.setAttribute('points',
-      `${x},${ym - r} ${x + r},${ym} ${x},${ym + r} ${x - r},${ym}`);
-    dText.setAttribute('x', x);
-    dText.setAttribute('y', ym);
-
-    var hit = document.getElementById('shortcut-hit');
-    if (hit) hit.setAttribute('d', `M ${x} ${y1} L ${x} ${y2}`);
+    pathTop.setAttribute(&#x27;d&#x27;, &#x27;M &#x27; + x + &#x27; &#x27; + y1 + &#x27; L &#x27; + x + &#x27; &#x27; + (ym - r - 2));
+    pathBot.setAttribute(&#x27;d&#x27;, &#x27;M &#x27; + x + &#x27; &#x27; + (ym + r + 2) + &#x27; L &#x27; + x + &#x27; &#x27; + y2);
+    diamond.setAttribute(&#x27;points&#x27;,
+      x + &#x27;,&#x27; + (ym - r) + &#x27; &#x27; + (x + r) + &#x27;,&#x27; + ym + &#x27; &#x27; + x + &#x27;,&#x27; + (ym + r) + &#x27; &#x27; + (x - r) + &#x27;,&#x27; + ym);
+    dText.setAttribute(&#x27;x&#x27;, x);
+    dText.setAttribute(&#x27;y&#x27;, ym);
+    var hit = document.getElementById(&#x27;shortcut-hit&#x27;);
+    if (hit) hit.setAttribute(&#x27;d&#x27;, &#x27;M &#x27; + x + &#x27; &#x27; + y1 + &#x27; L &#x27; + x + &#x27; &#x27; + y2);
   }
 
   function showShortcutTip(e) {
     e.stopPropagation();
-    var tip = document.getElementById('sidebar-tooltip');
-    tip.textContent = 'Pular os quadros 2 e 3 caso o paciente opte por não realizar testes genéticos e não precise de exames complementares pela PCMSO.';
-    tip.style.borderLeftColor = 'var(--border)';
-    tip.classList.add('visible');
-    tip.style.left = (e.clientX + 12) + 'px';
-    tip.style.top  = (e.clientY - 20) + 'px';
+    const tip = document.getElementById(&#x27;sidebar-tooltip&#x27;);
+    tip.textContent = &#x27;Pular os quadros 2 e 3 caso o paciente opte por não realizar testes genéticos e não precise de exames complementares pela PCMSO.&#x27;;
+    tip.style.borderLeftColor = &#x27;var(--border)&#x27;;
+    tip.classList.add(&#x27;visible&#x27;);
+    tip.style.left = (e.clientX + 12) + &#x27;px&#x27;;
+    tip.style.top  = (e.clientY - 20) + &#x27;px&#x27;;
   }
 
-  window.addEventListener('load', drawShortcut);
-  window.addEventListener('resize', drawShortcut);
+  window.addEventListener(&#x27;load&#x27;, drawShortcut);
+  window.addEventListener(&#x27;resize&#x27;, drawShortcut);
 
   function toggle(card) {
-    var isActive = card.classList.contains('active');
-    document.querySelectorAll('.step-card.active').forEach(c => c.classList.remove('active'));
-    if (!isActive) card.classList.add('active');
+    const isActive = card.classList.contains(&#x27;active&#x27;);
+    document.querySelectorAll(&#x27;.step-card.active&#x27;).forEach(c =&gt; c.classList.remove(&#x27;active&#x27;));
+    if (!isActive) card.classList.add(&#x27;active&#x27;);
   }
 
-  var tooltip = document.getElementById('sidebar-tooltip');
-  var activeItem = null;
+  const tooltip = document.getElementById(&#x27;sidebar-tooltip&#x27;);
+  let activeItem = null;
 
-  document.querySelectorAll('.sidebar-item[data-tip]').forEach(item => {
-    item.addEventListener('click', function(e) {
+  document.querySelectorAll(&#x27;.sidebar-item[data-tip]&#x27;).forEach(item =&gt; {
+    item.addEventListener(&#x27;click&#x27;, function(e) {
       e.stopPropagation();
-      if (activeItem === item && tooltip.classList.contains('visible')) {
-        tooltip.classList.remove('visible');
+      if (activeItem === item &amp;&amp; tooltip.classList.contains(&#x27;visible&#x27;)) {
+        tooltip.classList.remove(&#x27;visible&#x27;);
         activeItem = null;
         return;
       }
       activeItem = item;
       tooltip.textContent = item.dataset.tip;
-      tooltip.classList.add('visible');
-      var rect = item.getBoundingClientRect();
+      tooltip.classList.add(&#x27;visible&#x27;);
+      const rect = item.getBoundingClientRect();
       // position to the right of the sidebar item, or below if no room
-      var left = rect.right + 10;
-      var top = rect.top;
-      // ensure it doesn't go off screen right
-      if (left + 250 > window.innerWidth) {
+      let left = rect.right + 10;
+      let top = rect.top;
+      // ensure it doesn&#x27;t go off screen right
+      if (left + 250 &gt; window.innerWidth) {
         left = rect.left - 260;
       }
-      if (top + 200 > window.innerHeight) {
+      if (top + 200 &gt; window.innerHeight) {
         top = window.innerHeight - 210;
       }
-      tooltip.style.left = left + 'px';
-      tooltip.style.top = top + 'px';
+      tooltip.style.left = left + &#x27;px&#x27;;
+      tooltip.style.top = top + &#x27;px&#x27;;
     });
   });
 
-  document.querySelectorAll('.sidebar-right .sidebar-item[data-highlight]').forEach(item => {
-    item.addEventListener('click', function(e) {
+  document.querySelectorAll(&#x27;.sidebar-right .sidebar-item[data-highlight]&#x27;).forEach(item =&gt; {
+    item.addEventListener(&#x27;click&#x27;, function(e) {
       e.stopPropagation();
-      var isActive = item.classList.contains('active-loc');
+      const isActive = item.classList.contains(&#x27;active-loc&#x27;);
       // clear all highlights
-      document.querySelectorAll('.step-card.highlighted').forEach(c => c.classList.remove('highlighted'));
-      document.querySelectorAll('.sidebar-right .sidebar-item.active-loc').forEach(i => i.classList.remove('active-loc'));
+      document.querySelectorAll(&#x27;.step-card.highlighted&#x27;).forEach(c =&gt; c.classList.remove(&#x27;highlighted&#x27;));
+      document.querySelectorAll(&#x27;.sidebar-right .sidebar-item.active-loc&#x27;).forEach(i =&gt; i.classList.remove(&#x27;active-loc&#x27;));
       if (!isActive) {
-        item.classList.add('active-loc');
-        item.dataset.highlight.split(',').forEach(id => {
-          var el = document.getElementById(id.trim());
-          if (el) el.classList.add('highlighted');
+        item.classList.add(&#x27;active-loc&#x27;);
+        item.dataset.highlight.split(&#x27;,&#x27;).forEach(id =&gt; {
+          const el = document.getElementById(id.trim());
+          if (el) el.classList.add(&#x27;highlighted&#x27;);
         });
       }
     });
   });
 
-  document.addEventListener('click', function() {
-    tooltip.classList.remove('visible');
+  document.addEventListener(&#x27;click&#x27;, function() {
+    tooltip.classList.remove(&#x27;visible&#x27;);
     activeItem = null;
-    document.querySelectorAll('.step-card.highlighted').forEach(c => c.classList.remove('highlighted'));
-    document.querySelectorAll('.sidebar-right .sidebar-item.active-loc').forEach(i => i.classList.remove('active-loc'));
+    document.querySelectorAll(&#x27;.step-card.highlighted&#x27;).forEach(c =&gt; c.classList.remove(&#x27;highlighted&#x27;));
+    document.querySelectorAll(&#x27;.sidebar-right .sidebar-item.active-loc&#x27;).forEach(i =&gt; i.classList.remove(&#x27;active-loc&#x27;));
   });
-
-})();
-</script>
-</div>
-  </div>
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+" style="width:100%; flex:1; border:none; min-height:75vh;"></iframe>
 </div>
 
 <script>
-  var modal = document.getElementById('modal');
-  document.querySelector('.cta-btn').addEventListener('click', function() {
-    modal.classList.add('open');
+(function(){
+  var modal = document.getElementById("modal");
+  document.querySelector(".cta-btn").addEventListener("click", function(){
+    modal.classList.add("open");
   });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') modal.classList.remove('open');
+  document.addEventListener("keydown", function(e){
+    if(e.key==="Escape") modal.classList.remove("open");
   });
+})();
 </script>
 </body>
 </html>
